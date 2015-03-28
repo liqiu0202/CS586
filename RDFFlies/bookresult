@@ -1,0 +1,709 @@
+<table class="sparql" border="1">
+  <tr>
+    <th>Book</th>
+    <th>name</th>
+    <th>author</th>
+    <th>genre</th>
+    <th>language</th>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Pyongyang_(comics)">http://dbpedia.org/resource/Pyongyang_(comics)</a></td>
+    <td>Pyongyang</td>
+    <td><a href="http://dbpedia.org/resource/Guy_Delisle">http://dbpedia.org/resource/Guy_Delisle</a></td>
+    <td><a href="http://dbpedia.org/resource/Graphic_novel">http://dbpedia.org/resource/Graphic_novel</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Pyongyang_(comics)">http://dbpedia.org/resource/Pyongyang_(comics)</a></td>
+    <td>Pyongyang</td>
+    <td><a href="http://dbpedia.org/resource/Guy_Delisle">http://dbpedia.org/resource/Guy_Delisle</a></td>
+    <td><a href="http://dbpedia.org/resource/Memoir">http://dbpedia.org/resource/Memoir</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Red_Lights_(novel)">http://dbpedia.org/resource/Red_Lights_(novel)</a></td>
+    <td>Red Lights</td>
+    <td><a href="http://dbpedia.org/resource/Georges_Simenon">http://dbpedia.org/resource/Georges_Simenon</a></td>
+    <td><a href="http://dbpedia.org/resource/Psychological_novel">http://dbpedia.org/resource/Psychological_novel</a></td>
+    <td><a href="http://dbpedia.org/resource/French_language">http://dbpedia.org/resource/French_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Red_Lights_(novel)">http://dbpedia.org/resource/Red_Lights_(novel)</a></td>
+    <td>Feux rouges</td>
+    <td><a href="http://dbpedia.org/resource/Georges_Simenon">http://dbpedia.org/resource/Georges_Simenon</a></td>
+    <td><a href="http://dbpedia.org/resource/Psychological_novel">http://dbpedia.org/resource/Psychological_novel</a></td>
+    <td><a href="http://dbpedia.org/resource/French_language">http://dbpedia.org/resource/French_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/12th_of_Never_(novel)">http://dbpedia.org/resource/12th_of_Never_(novel)</a></td>
+    <td>12th of Never</td>
+    <td><a href="http://dbpedia.org/resource/James_Patterson">http://dbpedia.org/resource/James_Patterson</a></td>
+    <td><a href="http://dbpedia.org/resource/Thriller_(genre)">http://dbpedia.org/resource/Thriller_(genre)</a></td>
+    <td><a href="http://dbpedia.org/resource/American_English">http://dbpedia.org/resource/American_English</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/12th_of_Never_(novel)">http://dbpedia.org/resource/12th_of_Never_(novel)</a></td>
+    <td>12th of Never</td>
+    <td><a href="http://dbpedia.org/resource/Maxine_Paetro">http://dbpedia.org/resource/Maxine_Paetro</a></td>
+    <td><a href="http://dbpedia.org/resource/Thriller_(genre)">http://dbpedia.org/resource/Thriller_(genre)</a></td>
+    <td><a href="http://dbpedia.org/resource/American_English">http://dbpedia.org/resource/American_English</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/A_Glimpse_of_Tiger">http://dbpedia.org/resource/A_Glimpse_of_Tiger</a></td>
+    <td>A Glimpse of Tiger</td>
+    <td><a href="http://dbpedia.org/resource/Herman_Raucher">http://dbpedia.org/resource/Herman_Raucher</a></td>
+    <td><a href="http://dbpedia.org/resource/Novel">http://dbpedia.org/resource/Novel</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/A_Glimpse_of_Tiger">http://dbpedia.org/resource/A_Glimpse_of_Tiger</a></td>
+    <td>A Glimpse of Tiger</td>
+    <td><a href="http://dbpedia.org/resource/Herman_Raucher">http://dbpedia.org/resource/Herman_Raucher</a></td>
+    <td><a href="http://dbpedia.org/resource/Novel">http://dbpedia.org/resource/Novel</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/A_Matter_of_Honour">http://dbpedia.org/resource/A_Matter_of_Honour</a></td>
+    <td>A Matter of Honour</td>
+    <td><a href="http://dbpedia.org/resource/Jeffrey_Archer">http://dbpedia.org/resource/Jeffrey_Archer</a></td>
+    <td><a href="http://dbpedia.org/resource/Spy_fiction">http://dbpedia.org/resource/Spy_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/A_Matter_of_Honour">http://dbpedia.org/resource/A_Matter_of_Honour</a></td>
+    <td>A Matter of Honour</td>
+    <td><a href="http://dbpedia.org/resource/Jeffrey_Archer">http://dbpedia.org/resource/Jeffrey_Archer</a></td>
+    <td><a href="http://dbpedia.org/resource/Thriller_(genre)">http://dbpedia.org/resource/Thriller_(genre)</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/A_Passionate_Pilgrim">http://dbpedia.org/resource/A_Passionate_Pilgrim</a></td>
+    <td>A Passionate Pilgrim</td>
+    <td><a href="http://dbpedia.org/resource/Henry_James">http://dbpedia.org/resource/Henry_James</a></td>
+    <td><a href="http://dbpedia.org/resource/Novella">http://dbpedia.org/resource/Novella</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/A_Treatise_on_Money">http://dbpedia.org/resource/A_Treatise_on_Money</a></td>
+    <td>A Treatise on Money</td>
+    <td><a href="http://dbpedia.org/resource/John_Maynard_Keynes">http://dbpedia.org/resource/John_Maynard_Keynes</a></td>
+    <td><a href="http://dbpedia.org/resource/Non-fiction">http://dbpedia.org/resource/Non-fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/About_Us_(novel)">http://dbpedia.org/resource/About_Us_(novel)</a></td>
+    <td>About Us</td>
+    <td><a href="http://dbpedia.org/resource/Chester_Aaron">http://dbpedia.org/resource/Chester_Aaron</a></td>
+    <td><a href="http://dbpedia.org/resource/Novel">http://dbpedia.org/resource/Novel</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Accident_(novel)">http://dbpedia.org/resource/Accident_(novel)</a></td>
+    <td>Accident</td>
+    <td><a href="http://dbpedia.org/resource/Danielle_Steel">http://dbpedia.org/resource/Danielle_Steel</a></td>
+    <td><a href="http://dbpedia.org/resource/Romance_novel">http://dbpedia.org/resource/Romance_novel</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Across_the_Universe_(Star_Trek)">http://dbpedia.org/resource/Across_the_Universe_(Star_Trek)</a></td>
+    <td>Across the Universe</td>
+    <td><a href="http://dbpedia.org/resource/George_Zebrowski">http://dbpedia.org/resource/George_Zebrowski</a></td>
+    <td><a href="http://dbpedia.org/resource/List_of_science_fiction_novels">http://dbpedia.org/resource/List_of_science_fiction_novels</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Across_the_Universe_(Star_Trek)">http://dbpedia.org/resource/Across_the_Universe_(Star_Trek)</a></td>
+    <td>Across the Universe</td>
+    <td><a href="http://dbpedia.org/resource/Pamela_Sargent">http://dbpedia.org/resource/Pamela_Sargent</a></td>
+    <td><a href="http://dbpedia.org/resource/List_of_science_fiction_novels">http://dbpedia.org/resource/List_of_science_fiction_novels</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Across_the_Universe_(novel)">http://dbpedia.org/resource/Across_the_Universe_(novel)</a></td>
+    <td>Across the Universe</td>
+    <td><a href="http://dbpedia.org/resource/Beth_Revis">http://dbpedia.org/resource/Beth_Revis</a></td>
+    <td><a href="http://dbpedia.org/resource/Utopian_and_dystopian_fiction">http://dbpedia.org/resource/Utopian_and_dystopian_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Across_the_Universe_(novel)">http://dbpedia.org/resource/Across_the_Universe_(novel)</a></td>
+    <td>Across the Universe</td>
+    <td><a href="http://dbpedia.org/resource/Beth_Revis">http://dbpedia.org/resource/Beth_Revis</a></td>
+    <td><a href="http://dbpedia.org/resource/Science_fiction">http://dbpedia.org/resource/Science_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Across_the_Universe_(novel)">http://dbpedia.org/resource/Across_the_Universe_(novel)</a></td>
+    <td>Across the Universe</td>
+    <td><a href="http://dbpedia.org/resource/Beth_Revis">http://dbpedia.org/resource/Beth_Revis</a></td>
+    <td><a href="http://dbpedia.org/resource/Crime_fiction">http://dbpedia.org/resource/Crime_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Across_the_Universe_(novel)">http://dbpedia.org/resource/Across_the_Universe_(novel)</a></td>
+    <td>Across the Universe</td>
+    <td><a href="http://dbpedia.org/resource/Beth_Revis">http://dbpedia.org/resource/Beth_Revis</a></td>
+    <td><a href="http://dbpedia.org/resource/Young-adult_fiction">http://dbpedia.org/resource/Young-adult_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/After_the_Ball_(play)">http://dbpedia.org/resource/After_the_Ball_(play)</a></td>
+    <td>After the Ball</td>
+    <td><a href="http://dbpedia.org/resource/David_Williamson">http://dbpedia.org/resource/David_Williamson</a></td>
+    <td><a href="http://dbpedia.org/resource/Play_(theatre)">http://dbpedia.org/resource/Play_(theatre)</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Agent_13:_The_Invisible_Empire">http://dbpedia.org/resource/Agent_13:_The_Invisible_Empire</a></td>
+    <td>The Invisible Empire</td>
+    <td><a href="http://dbpedia.org/resource/Flint_Dille">http://dbpedia.org/resource/Flint_Dille</a></td>
+    <td><a href="http://dbpedia.org/resource/Children's_literature">http://dbpedia.org/resource/Children&#39;s_literature</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Agent_13:_The_Invisible_Empire">http://dbpedia.org/resource/Agent_13:_The_Invisible_Empire</a></td>
+    <td>The Invisible Empire</td>
+    <td><a href="http://dbpedia.org/resource/David_Marconi">http://dbpedia.org/resource/David_Marconi</a></td>
+    <td><a href="http://dbpedia.org/resource/Children's_literature">http://dbpedia.org/resource/Children&#39;s_literature</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Airman_(novel)">http://dbpedia.org/resource/Airman_(novel)</a></td>
+    <td>Airman</td>
+    <td><a href="http://dbpedia.org/resource/Eoin_Colfer">http://dbpedia.org/resource/Eoin_Colfer</a></td>
+    <td><a href="http://dbpedia.org/resource/Historical_fiction">http://dbpedia.org/resource/Historical_fiction</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Airman_(novel)">http://dbpedia.org/resource/Airman_(novel)</a></td>
+    <td>Airman</td>
+    <td><a href="http://dbpedia.org/resource/Eoin_Colfer">http://dbpedia.org/resource/Eoin_Colfer</a></td>
+    <td><a href="http://dbpedia.org/resource/Fantasy">http://dbpedia.org/resource/Fantasy</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/All_the_King's_Men">http://dbpedia.org/resource/All_the_King&#39;s_Men</a></td>
+    <td>All the King&#39;s Men</td>
+    <td><a href="http://dbpedia.org/resource/Robert_Penn_Warren">http://dbpedia.org/resource/Robert_Penn_Warren</a></td>
+    <td><a href="http://dbpedia.org/resource/Political_fiction">http://dbpedia.org/resource/Political_fiction</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/All_the_Rage_(novel)">http://dbpedia.org/resource/All_the_Rage_(novel)</a></td>
+    <td>All The Rage</td>
+    <td><a href="http://dbpedia.org/resource/F._Paul_Wilson">http://dbpedia.org/resource/F._Paul_Wilson</a></td>
+    <td><a href="http://dbpedia.org/resource/Fiction">http://dbpedia.org/resource/Fiction</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Brendan_Hay">http://dbpedia.org/resource/Brendan_Hay</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Brendan_Hay">http://dbpedia.org/resource/Brendan_Hay</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Brendan_Hay">http://dbpedia.org/resource/Brendan_Hay</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Steve_Bodow">http://dbpedia.org/resource/Steve_Bodow</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Steve_Bodow">http://dbpedia.org/resource/Steve_Bodow</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Steve_Bodow">http://dbpedia.org/resource/Steve_Bodow</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/David_Javerbaum">http://dbpedia.org/resource/David_Javerbaum</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/David_Javerbaum">http://dbpedia.org/resource/David_Javerbaum</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/David_Javerbaum">http://dbpedia.org/resource/David_Javerbaum</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Stephen_Colbert">http://dbpedia.org/resource/Stephen_Colbert</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Stephen_Colbert">http://dbpedia.org/resource/Stephen_Colbert</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Stephen_Colbert">http://dbpedia.org/resource/Stephen_Colbert</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Eric_Drysdale">http://dbpedia.org/resource/Eric_Drysdale</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Eric_Drysdale">http://dbpedia.org/resource/Eric_Drysdale</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Eric_Drysdale">http://dbpedia.org/resource/Eric_Drysdale</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Jon_Stewart">http://dbpedia.org/resource/Jon_Stewart</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Jon_Stewart">http://dbpedia.org/resource/Jon_Stewart</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Jon_Stewart">http://dbpedia.org/resource/Jon_Stewart</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Ben_Karlin">http://dbpedia.org/resource/Ben_Karlin</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Ben_Karlin">http://dbpedia.org/resource/Ben_Karlin</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Ben_Karlin">http://dbpedia.org/resource/Ben_Karlin</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Rich_Blomquist">http://dbpedia.org/resource/Rich_Blomquist</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Rich_Blomquist">http://dbpedia.org/resource/Rich_Blomquist</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Rich_Blomquist">http://dbpedia.org/resource/Rich_Blomquist</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Rob_Corddry">http://dbpedia.org/resource/Rob_Corddry</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Rob_Corddry">http://dbpedia.org/resource/Rob_Corddry</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Rob_Corddry">http://dbpedia.org/resource/Rob_Corddry</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Chris_Regan">http://dbpedia.org/resource/Chris_Regan</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Chris_Regan">http://dbpedia.org/resource/Chris_Regan</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Chris_Regan">http://dbpedia.org/resource/Chris_Regan</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Samantha_Bee">http://dbpedia.org/resource/Samantha_Bee</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Samantha_Bee">http://dbpedia.org/resource/Samantha_Bee</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Samantha_Bee">http://dbpedia.org/resource/Samantha_Bee</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Ed_Helms">http://dbpedia.org/resource/Ed_Helms</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Ed_Helms">http://dbpedia.org/resource/Ed_Helms</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Ed_Helms">http://dbpedia.org/resource/Ed_Helms</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (The Book)</td>
+    <td><a href="http://dbpedia.org/resource/Tim_Carvell">http://dbpedia.org/resource/Tim_Carvell</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>(A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Tim_Carvell">http://dbpedia.org/resource/Tim_Carvell</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(The_Book)">http://dbpedia.org/resource/America_(The_Book)</a></td>
+    <td>America (the Book) Teacher&#39;s Edition: (A Citizen&#39;s Guide to Democracy Inaction)</td>
+    <td><a href="http://dbpedia.org/resource/Tim_Carvell">http://dbpedia.org/resource/Tim_Carvell</a></td>
+    <td>Humor</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/America_(novel)">http://dbpedia.org/resource/America_(novel)</a></td>
+    <td>America</td>
+    <td><a href="http://dbpedia.org/resource/E.R._Frank">http://dbpedia.org/resource/E.R._Frank</a></td>
+    <td><a href="http://dbpedia.org/resource/Young-adult_fiction">http://dbpedia.org/resource/Young-adult_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/An_American_Life">http://dbpedia.org/resource/An_American_Life</a></td>
+    <td>An American Life</td>
+    <td><a href="http://dbpedia.org/resource/Ronald_Reagan">http://dbpedia.org/resource/Ronald_Reagan</a></td>
+    <td><a href="http://dbpedia.org/resource/Memoir">http://dbpedia.org/resource/Memoir</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/And_Then_You_Die">http://dbpedia.org/resource/And_Then_You_Die</a></td>
+    <td>And Then You Die</td>
+    <td><a href="http://dbpedia.org/resource/Michael_Dibdin">http://dbpedia.org/resource/Michael_Dibdin</a></td>
+    <td><a href="http://dbpedia.org/resource/Crime_fiction">http://dbpedia.org/resource/Crime_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/And_Then_You_Die">http://dbpedia.org/resource/And_Then_You_Die</a></td>
+    <td>And Then You Die</td>
+    <td><a href="http://dbpedia.org/resource/Michael_Dibdin">http://dbpedia.org/resource/Michael_Dibdin</a></td>
+    <td><a href="http://dbpedia.org/resource/Mystery_fiction">http://dbpedia.org/resource/Mystery_fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Anywhere_But_Here_(novel)">http://dbpedia.org/resource/Anywhere_But_Here_(novel)</a></td>
+    <td>Anywhere But Here</td>
+    <td><a href="http://dbpedia.org/resource/Mona_Simpson">http://dbpedia.org/resource/Mona_Simpson</a></td>
+    <td><a href="http://dbpedia.org/resource/Biography_in_literature">http://dbpedia.org/resource/Biography_in_literature</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Arabella_(novel)">http://dbpedia.org/resource/Arabella_(novel)</a></td>
+    <td>Arabella</td>
+    <td><a href="http://dbpedia.org/resource/Georgette_Heyer">http://dbpedia.org/resource/Georgette_Heyer</a></td>
+    <td><a href="http://dbpedia.org/resource/Regency_era">http://dbpedia.org/resource/Regency_era</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Arabella_(novel)">http://dbpedia.org/resource/Arabella_(novel)</a></td>
+    <td>Arabella</td>
+    <td><a href="http://dbpedia.org/resource/Georgette_Heyer">http://dbpedia.org/resource/Georgette_Heyer</a></td>
+    <td><a href="http://dbpedia.org/resource/Romance_novel">http://dbpedia.org/resource/Romance_novel</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Averno_(poetry)">http://dbpedia.org/resource/Averno_(poetry)</a></td>
+    <td>Averno</td>
+    <td><a href="http://dbpedia.org/resource/Louise_Gl%C3%BCck">http://dbpedia.org/resource/Louise_Gl%C3%BCck</a></td>
+    <td><a href="http://dbpedia.org/resource/Poetry">http://dbpedia.org/resource/Poetry</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Avoidance_(novel)">http://dbpedia.org/resource/Avoidance_(novel)</a></td>
+    <td>Avoidance</td>
+    <td><a href="http://dbpedia.org/resource/Michael_Lowenthal">http://dbpedia.org/resource/Michael_Lowenthal</a></td>
+    <td>Novel</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Awful_End">http://dbpedia.org/resource/Awful_End</a></td>
+    <td>Awful End</td>
+    <td><a href="http://dbpedia.org/resource/Philip_Ardagh">http://dbpedia.org/resource/Philip_Ardagh</a></td>
+    <td>comedy</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Barsa_(novel)">http://dbpedia.org/resource/Barsa_(novel)</a></td>
+    <td>Barsa</td>
+    <td><a href="http://dbpedia.org/resource/Khadija_Mumtaz">http://dbpedia.org/resource/Khadija_Mumtaz</a></td>
+    <td>Novel</td>
+    <td><a href="http://dbpedia.org/resource/Malayalam">http://dbpedia.org/resource/Malayalam</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Beau_Brocade">http://dbpedia.org/resource/Beau_Brocade</a></td>
+    <td>Beau Brocade</td>
+    <td><a href="http://dbpedia.org/resource/Emma_Orczy">http://dbpedia.org/resource/Emma_Orczy</a></td>
+    <td><a href="http://dbpedia.org/resource/Historical_novel">http://dbpedia.org/resource/Historical_novel</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Best_Kept_Secret_(novel)">http://dbpedia.org/resource/Best_Kept_Secret_(novel)</a></td>
+    <td>Best Kept Secret</td>
+    <td><a href="http://dbpedia.org/resource/Jeffrey_Archer">http://dbpedia.org/resource/Jeffrey_Archer</a></td>
+    <td>Fiction</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Beyond_Chutzpah">http://dbpedia.org/resource/Beyond_Chutzpah</a></td>
+    <td>Beyond Chutzpah: On the Misuse of Anti-Semitism and the Abuse of History</td>
+    <td><a href="http://dbpedia.org/resource/Norman_Finkelstein">http://dbpedia.org/resource/Norman_Finkelstein</a></td>
+    <td>Non-fiction</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Big_Deal:_A_Year_as_a_Professional_Poker_Player">http://dbpedia.org/resource/Big_Deal:_A_Year_as_a_Professional_Poker_Player</a></td>
+    <td>Big Deal:A Year as a Professional Poker Player</td>
+    <td><a href="http://dbpedia.org/resource/Anthony_Holden">http://dbpedia.org/resource/Anthony_Holden</a></td>
+    <td><a href="http://dbpedia.org/resource/Non-fiction">http://dbpedia.org/resource/Non-fiction</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Black_Wind_(Cussler_novel)">http://dbpedia.org/resource/Black_Wind_(Cussler_novel)</a></td>
+    <td>Black Wind</td>
+    <td><a href="http://dbpedia.org/resource/Clive_Cussler">http://dbpedia.org/resource/Clive_Cussler</a></td>
+    <td><a href="http://dbpedia.org/resource/Adventure">http://dbpedia.org/resource/Adventure</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Black_Wind_(Cussler_novel)">http://dbpedia.org/resource/Black_Wind_(Cussler_novel)</a></td>
+    <td>Black Wind</td>
+    <td><a href="http://dbpedia.org/resource/Clive_Cussler">http://dbpedia.org/resource/Clive_Cussler</a></td>
+    <td><a href="http://dbpedia.org/resource/Techno-thriller">http://dbpedia.org/resource/Techno-thriller</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Blasphemy_(novel)">http://dbpedia.org/resource/Blasphemy_(novel)</a></td>
+    <td>Blasphemy</td>
+    <td><a href="http://dbpedia.org/resource/Douglas_Preston">http://dbpedia.org/resource/Douglas_Preston</a></td>
+    <td><a href="http://dbpedia.org/resource/Science_fiction">http://dbpedia.org/resource/Science_fiction</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Blasphemy_(novel)">http://dbpedia.org/resource/Blasphemy_(novel)</a></td>
+    <td>Blasphemy</td>
+    <td><a href="http://dbpedia.org/resource/Douglas_Preston">http://dbpedia.org/resource/Douglas_Preston</a></td>
+    <td><a href="http://dbpedia.org/resource/Thriller_(genre)">http://dbpedia.org/resource/Thriller_(genre)</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Blonde_(novel)">http://dbpedia.org/resource/Blonde_(novel)</a></td>
+    <td>Blonde</td>
+    <td><a href="http://dbpedia.org/resource/Joyce_Carol_Oates">http://dbpedia.org/resource/Joyce_Carol_Oates</a></td>
+    <td><a href="http://dbpedia.org/resource/Historical_novel">http://dbpedia.org/resource/Historical_novel</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Blood_Sisters">http://dbpedia.org/resource/Blood_Sisters</a></td>
+    <td>Blood Sisters</td>
+    <td><a href="http://dbpedia.org/resource/Stephanie_Keating">http://dbpedia.org/resource/Stephanie_Keating</a></td>
+    <td><a href="http://dbpedia.org/resource/Novel">http://dbpedia.org/resource/Novel</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Blood_Sisters">http://dbpedia.org/resource/Blood_Sisters</a></td>
+    <td>Blood Sisters</td>
+    <td><a href="http://dbpedia.org/resource/Barbara_Keating">http://dbpedia.org/resource/Barbara_Keating</a></td>
+    <td><a href="http://dbpedia.org/resource/Novel">http://dbpedia.org/resource/Novel</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Breakheart_Pass_(novel)">http://dbpedia.org/resource/Breakheart_Pass_(novel)</a></td>
+    <td>Breakheart Pass</td>
+    <td><a href="http://dbpedia.org/resource/Alistair_MacLean">http://dbpedia.org/resource/Alistair_MacLean</a></td>
+    <td><a href="http://dbpedia.org/resource/Western_(genre)">http://dbpedia.org/resource/Western_(genre)</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Breakheart_Pass_(novel)">http://dbpedia.org/resource/Breakheart_Pass_(novel)</a></td>
+    <td>Breakheart Pass</td>
+    <td><a href="http://dbpedia.org/resource/Alistair_MacLean">http://dbpedia.org/resource/Alistair_MacLean</a></td>
+    <td><a href="http://dbpedia.org/resource/Thriller_(genre)">http://dbpedia.org/resource/Thriller_(genre)</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Brigham_Young:_American_Moses">http://dbpedia.org/resource/Brigham_Young:_American_Moses</a></td>
+    <td>Brigham Young: American Moses</td>
+    <td><a href="http://dbpedia.org/resource/Leonard_J._Arrington">http://dbpedia.org/resource/Leonard_J._Arrington</a></td>
+    <td><a href="http://dbpedia.org/resource/Biography">http://dbpedia.org/resource/Biography</a></td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Bruja_(novel)">http://dbpedia.org/resource/Bruja_(novel)</a></td>
+    <td>Bruja</td>
+    <td><a href="http://dbpedia.org/resource/Mel_Odom_(author)">http://dbpedia.org/resource/Mel_Odom_(author)</a></td>
+    <td><a href="http://dbpedia.org/resource/Horror_fiction">http://dbpedia.org/resource/Horror_fiction</a></td>
+    <td><a href="http://dbpedia.org/resource/English_language">http://dbpedia.org/resource/English_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Business_is_business">http://dbpedia.org/resource/Business_is_business</a></td>
+    <td>Business is business</td>
+    <td><a href="http://dbpedia.org/resource/Octave_Mirbeau">http://dbpedia.org/resource/Octave_Mirbeau</a></td>
+    <td><a href="http://dbpedia.org/resource/Comedy">http://dbpedia.org/resource/Comedy</a></td>
+    <td><a href="http://dbpedia.org/resource/French_language">http://dbpedia.org/resource/French_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Business_is_business">http://dbpedia.org/resource/Business_is_business</a></td>
+    <td>Les affaires sont les affaires</td>
+    <td><a href="http://dbpedia.org/resource/Octave_Mirbeau">http://dbpedia.org/resource/Octave_Mirbeau</a></td>
+    <td><a href="http://dbpedia.org/resource/Comedy">http://dbpedia.org/resource/Comedy</a></td>
+    <td><a href="http://dbpedia.org/resource/French_language">http://dbpedia.org/resource/French_language</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Candide,_Part_II">http://dbpedia.org/resource/Candide,_Part_II</a></td>
+    <td>Candide, ou l&#39;Optimisme</td>
+    <td><a href="http://dbpedia.org/resource/Thorel_de_Campigneulles">http://dbpedia.org/resource/Thorel_de_Campigneulles</a></td>
+    <td><a href="http://dbpedia.org/resource/Picaresque_novel">http://dbpedia.org/resource/Picaresque_novel</a></td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Candide,_Part_II">http://dbpedia.org/resource/Candide,_Part_II</a></td>
+    <td>Candide, or Optimism</td>
+    <td><a href="http://dbpedia.org/resource/Thorel_de_Campigneulles">http://dbpedia.org/resource/Thorel_de_Campigneulles</a></td>
+    <td><a href="http://dbpedia.org/resource/Picaresque_novel">http://dbpedia.org/resource/Picaresque_novel</a></td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Candide,_Part_II">http://dbpedia.org/resource/Candide,_Part_II</a></td>
+    <td>Candide, ou l&#39;Optimisme</td>
+    <td><a href="http://dbpedia.org/resource/Thorel_de_Campigneulles">http://dbpedia.org/resource/Thorel_de_Campigneulles</a></td>
+    <td><a href="http://dbpedia.org/resource/Satire">http://dbpedia.org/resource/Satire</a></td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Candide,_Part_II">http://dbpedia.org/resource/Candide,_Part_II</a></td>
+    <td>Candide, or Optimism</td>
+    <td><a href="http://dbpedia.org/resource/Thorel_de_Campigneulles">http://dbpedia.org/resource/Thorel_de_Campigneulles</a></td>
+    <td><a href="http://dbpedia.org/resource/Satire">http://dbpedia.org/resource/Satire</a></td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Candide,_Part_II">http://dbpedia.org/resource/Candide,_Part_II</a></td>
+    <td>Candide, ou l&#39;Optimisme</td>
+    <td><a href="http://dbpedia.org/resource/Henri_Joseph_Du_Laurens">http://dbpedia.org/resource/Henri_Joseph_Du_Laurens</a></td>
+    <td><a href="http://dbpedia.org/resource/Picaresque_novel">http://dbpedia.org/resource/Picaresque_novel</a></td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td><a href="http://dbpedia.org/resource/Candide,_Part_II">http://dbpedia.org/resource/Candide,_Part_II</a></td>
+    <td>Candide, or Optimism</td>
+    <td><a href="http://dbpedia.org/resource/Henri_Joseph_Du_Laurens">http://dbpedia.org/resource/Henri_Joseph_Du_Laurens</a></td>
+    <td><a href="http://dbpedia.org/resource/Picaresque_novel">http://dbpedia.org/resource/Picaresque_novel</a></td>
+    <td>French</td>
+  </tr>
+</table>

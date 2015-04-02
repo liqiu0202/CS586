@@ -35,6 +35,7 @@
     <owl:ObjectProperty rdf:about="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#author">
         <rdfs:range rdf:resource="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#Author"/>
         <rdfs:domain rdf:resource="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#Book"/>
+        <rdfs:domain rdf:resource="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#Movie"/>
     </owl:ObjectProperty>
     
 
@@ -77,6 +78,15 @@
     
 
 
+    <!-- http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#abstract -->
+
+    <owl:DatatypeProperty rdf:about="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#abstract">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#country -->
 
     <owl:DatatypeProperty rdf:about="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#country">
@@ -112,6 +122,15 @@
     <owl:DatatypeProperty rdf:about="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#released">
         <rdfs:domain rdf:resource="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#Movie"/>
         <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#wikiLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#wikiLink">
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
     </owl:DatatypeProperty>
     
 

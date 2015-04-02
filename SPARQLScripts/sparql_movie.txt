@@ -1,0 +1,12 @@
+select distinct * where
+{?Movie a <http://dbpedia.org/ontology/Film>;
+  <http://xmlns.com/foaf/0.1/name> ?name;
+  <http://dbpedia.org/property/director> ?director;
+  <http://dbpedia.org/property/starring> ?starring;
+  <http://dbpedia.org/ontology/writer> ?writer;
+  <http://dbpedia.org/property/language> ?language;
+  <http://www.w3.org/ns/prov#wasDerivedFrom> ?wikiLink;
+  <http://dbpedia.org/ontology/abstract> ?abstract.
+  FILTER isIRI(?director).
+  FILTER isIRI(?starring).
+  FILTER isIRI(?writer). } LIMIT 10000

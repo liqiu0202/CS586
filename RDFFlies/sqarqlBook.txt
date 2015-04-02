@@ -1,6 +1,0 @@
-select distinct * where
-{?Book a <http://dbpedia.org/ontology/Book>;
-  <http://xmlns.com/foaf/0.1/name> ?name;
-  <http://dbpedia.org/ontology/author> ?author;
-  <http://dbpedia.org/property/genre> ?genre;
-  <http://dbpedia.org/property/language> ?language} LIMIT 100

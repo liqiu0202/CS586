@@ -1,6 +1,11 @@
 package com.liqiu;
 
-public class Thing {
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public abstract class Thing {
 	private String wikiLink;
 	private String description;
 	private String name;
@@ -23,4 +28,5 @@ public class Thing {
 		this.wikiLink = wikiLink;
 	}
 	
+	public abstract ArrayList<String> nameToURLs(String name);
 }

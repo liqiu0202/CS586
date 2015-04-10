@@ -1,0 +1,27 @@
+//==front-back end interface data transfer schema==//
+param		value
+target:		Book|Movie|Author|Actor|(*Director)
+
+
+Specification:
+	Book:
+		name = ?	author = ? language = ?
+
+	Movie:
+		name = ?	director = ?	starring = ?	language = ?
+
+	Author:
+		movieName = ?	bookName = ?
+
+	Actor:
+		movieName = ?
+
+	Director:
+		movieName = ?
+
+
+Return objects:
+[ objects, ... ]
+	
+
+

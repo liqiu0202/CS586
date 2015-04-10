@@ -3,10 +3,18 @@ select distinct * where
   <http://xmlns.com/foaf/0.1/name> ?name;
   <http://dbpedia.org/property/director> ?director;
   <http://dbpedia.org/property/starring> ?starring;
-  <http://dbpedia.org/ontology/writer> ?writer;
+  <http://dbpedia.org/ontology/writer> ?author;
   <http://dbpedia.org/property/language> ?language;
-  <http://www.w3.org/ns/prov#wasDerivedFrom> ?wikiLink;
-  <http://dbpedia.org/ontology/abstract> ?abstract.
+  <http://www.w3.org/ns/prov#wasDerivedFrom> ?wikiLink.
   FILTER isIRI(?director).
   FILTER isIRI(?starring).
-  FILTER isIRI(?writer). } LIMIT 10000
+  FILTER isIRI(?author).
+  ?author  <http://xmlns.com/foaf/0.1/name> ?authorName;
+  <http://www.w3.org/ns/prov#wasDerivedFrom> ?authorWikiLink.
+  FILTER isIRI(?authorWikiLink).
+  ?starring  <http://xmlns.com/foaf/0.1/name> ?actorName;
+  <http://www.w3.org/ns/prov#wasDerivedFrom> ?actorWikiLink.
+  FILTER isIRI(?actorWikiLink).
+  ?director  <http://xmlns.com/foaf/0.1/name> ?directorName;
+  <http://www.w3.org/ns/prov#wasDerivedFrom> ?directorWikiLink.
+  FILTER isIRI(?directorWikiLink). } LIMIT 200000

@@ -1,9 +1,0 @@
-select distinct * where
-{?Book a <http://dbpedia.org/ontology/Book>;
-  <http://xmlns.com/foaf/0.1/name> ?name;
-  <http://dbpedia.org/ontology/author> ?author;
-  <http://dbpedia.org/property/language> ?language;
-  <http://www.w3.org/ns/prov#wasDerivedFrom> ?wikiLink;
-  <http://dbpedia.org/ontology/abstract> ?abstract.
-  FILTER isIRI(?author).
- } LIMIT 10000

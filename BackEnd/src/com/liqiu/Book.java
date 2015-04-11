@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hp.hpl.jena.query.QuerySolution;
 
 
 public class Book extends Thing{
@@ -26,17 +25,6 @@ public class Book extends Thing{
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	@Override
-	public ArrayList<String> nameToURLs(String name) {
-		ArrayList<QuerySolution> solns = SPARQLHelper.processQuery("PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
-    			+ "SELECT DISTINCT * WHERE{ ?Book a onto:Book; onto:name "
-    			+ name + "}");
-		ArrayList<String> bookList = new ArrayList<String>();
-		for(QuerySolution soln: solns ){
-			bookList.add( soln.getResource("Book").getURI() );
-		}
-		return bookList;
-	}
 	
 	public static void processQuery(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
     	
@@ -48,43 +36,20 @@ public class Book extends Thing{
     	
     	if( author != null )	condition += "\n ?author onto:name ?authorName."
     			+ " \nFILTER( str(?authorName) = \"" + author + "\").";
-//    	else condition += "; onto:author ?author";
-//    	    	
+    	
     	if( language != null )condition += "\nFILTER ( str(?language) =  \"" + language + "\").";
 
     	
     	String queryString = "PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
-    			+ "SELECT DISTINCT * WHERE{ ?Book a onto:Book; onto:wikiLink ?wikiLink; onto:abstract ?abstract;"
+    			+ "SELECT DISTINCT ?Book ?wikiLink ?name WHERE{ ?Book a onto:Book; onto:wikiLink ?wikiLink;"
     			+ " onto:name ?name; onto:author ?author; onto:language ?language."
     			+ condition + "}";
     	
     	System.out.println( queryString );
-    	ArrayList<QuerySolution> solns = SPARQLHelper.processQuery(queryString);
-    	ArrayList<Book> bookList = new ArrayList<Book>();
-    	for(QuerySolution soln :solns){
-    		Book book = new Book();
-    		if( soln.getLiteral("name") != null )	book.setName(  soln.getLiteral("name").toString() );
-    		else book.setName(name);
-    		
-    		if( soln.getResource("author") != null) book.setAuthor( soln.getResource("author").getURI());
-    		else book.setName(author);
-    		
-    		if( soln.getLiteral("language") != null) book.setLanguage( soln.getLiteral("language").toString() );
-    		else book.setLanguage(language);
-    		
-    		if( soln.getLiteral("abstract") != null)
-    			book.setDescription( soln.getLiteral("abstract").toString() );
-    		if( soln.getLiteral("wikiLink") != null)
-    			book.setWikiLink( soln.getLiteral("wikiLink").toString() );
-    		
-    		bookList.add( book );
-    			
-    	}
-//    	System.out.println(bookList.size() );
+    	ArrayList<Thing> res = SPARQLHelper.processQuery(queryString);
     	ObjectMapper mapper = new ObjectMapper();
-		String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(bookList);
-//		response.getWriter().println( jsonString );
-		System.out.println( jsonString );
+		String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
+		response.getWriter().println( jsonString );
     }
 
 }

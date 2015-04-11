@@ -1,9 +1,6 @@
 package com.liqiu;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import com.hp.hpl.jena.query.QuerySolution;
 
 public class TestQuery {
 	public static void main(String[] args)throws IOException{
@@ -27,11 +24,9 @@ public class TestQuery {
 		//movie based on books
 		String queryString = "PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
     			+ "SELECT DISTINCT * WHERE{ ?movie a onto:Movie; onto:name ?name. ?book a onto:Book; onto:name ?name.}";
-		ArrayList<QuerySolution> solns = SPARQLHelper.processQuery(queryString);
+		SPARQLHelper.processQuery(queryString);
 		
-		for(QuerySolution soln : solns ){
-			System.out.println( soln.getLiteral("name").toString() );
-		}
-		System.out.println( solns.size() );
+		
+//		System.out.println( res.size() );
 	}
 }

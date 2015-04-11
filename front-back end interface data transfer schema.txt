@@ -8,7 +8,7 @@ Specification:
 		name = ?	author = ? language = ?
 
 	Movie:
-		name = ?	director = ?	starring = ?	language = ?
+		name = ?	writer = ? director = ?	starring = ?	language = ?
 
 	Author:
 		movieName = ?	bookName = ?

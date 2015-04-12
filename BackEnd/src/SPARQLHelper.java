@@ -1,4 +1,4 @@
-package com.liqiu;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ import com.hp.hpl.jena.query.QuerySolution;
 public class SPARQLHelper {
 	public static ArrayList<Thing> processQuery(String queryString)throws IOException{
 		List<String> namedGraphURIs = new ArrayList<String>() ; 
-		namedGraphURIs.add("/Users/liqiu/Documents/CS586/RDFFiles/BookLarge.ttl");
-		namedGraphURIs.add("/Users/liqiu/Documents/CS586/RDFFiles/MovieLarge.ttl") ; 
+		namedGraphURIs.add("http://www-scf.usc.edu/~liqiu/cs586/BookLarge.ttl");
+		namedGraphURIs.add("http://www-scf.usc.edu/~liqiu/cs586/MovieLarge.ttl") ; 
 		Query query = QueryFactory.create(queryString);
 		Dataset dataset = DatasetFactory.create(namedGraphURIs) ;
 		QueryExecution qexec = QueryExecutionFactory.create(query, dataset);

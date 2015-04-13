@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Book And Movie Semantic Search</title>
+<meta name="description"
+	content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version." />
+
+<meta name="viewport"
+	content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- Loading Bootstrap -->
+<link
+	href="http://designmodo.github.io/Flat-UI/dist/css/vendor/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Loading Flat UI -->
+<link
+	href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css"
+	rel="stylesheet">
+<link
+	href="http://designmodo.github.io/Flat-UI/docs/assets/css/demo.css"
+	rel="stylesheet">
+
+<link rel="shortcut icon" href="img/favicon.ico">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="jumbotron" style='text-align: center; margin-bottom: 0px;'>
+		<h3>
+			Semantic Search on Federated Ontology
+			</h2>
+			<h5>
+				Books and Movies based on Books
+				</h2>
+	</div>
+	<!-- navigation bar -->
+	<div class="row">
+		<div>
+			<nav role="navigation" class="navbar navbar-inverse navbar-embossed"
+				style='margin-bottom: 0px'>
+				<div id="navbar-collapse-01" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li data-tabid="1" class="tabs"><a href="#fakelink">Faceted
+								Search</a></li>
+						<li data-tabid="2" class="tabs"><a href="#fakelink">Sparql
+								Search</a></li>
+						<li><a href="#fakelink">About Us</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- pallete item-->
+	<div id="target_menu" style="padding-left: 0px; display:inline-block; width:15%">
+		<dl class="palette palette-turquoise">
+			<h4 class="todo-name">Book</h4>
+		</dl>
+		<dl class="palette palette-green-sea">
+			<h4 class="todo-name">Movie</h4>
+		</dl>
+		<dl class="palette palette-turquoise">
+			<h4 class="todo-name">Author</h4>
+		</dl>
+		<dl class="palette palette-green-sea">
+			<h4 class="todo-name">Actor</h4>
+		</dl>
+		<dl class="palette palette-turquoise">
+			<h4 class="todo-name">Director</h4>
+		</dl>
+	</div>
+	<div id="spec_area" style="display:inline-block; width:25%">
+		<div class="col-xs-3">
+          <label for="checkbox1" class="checkbox">
+            <input type="checkbox" data-toggle="checkbox" id="checkbox1" value="" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+            Unchecked
+          </label>
+          <label for="checkbox2" class="checkbox">
+            <input type="checkbox" data-toggle="checkbox" id="checkbox2" value="" checked="checked" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+            Checked
+          </label>
+          <label for="checkbox3" class="checkbox">
+            <input type="checkbox" disabled="" data-toggle="checkbox" id="checkbox3" value="" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+            Disabled unchecked
+          </label>
+          <label for="checkbox4" class="checkbox">
+            <input type="checkbox" disabled="" data-toggle="checkbox" id="checkbox4" value="" checked="checked" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+            Disabled checked
+          </label>
+        </div>
+	</div>
+	<div id='result_area' style="display:inline-block">
+		<div id='content_area'>
+			<a href="http://en.wikipedia.org/wiki/Harry_Potter">Harry Potter1</a>
+			<p>Harry Potter is a good book</p>
+			<br> <a href="http://en.wikipedia.org/wiki/Harry_Potter">Harry
+				Potter2</a>
+			<p>Harry Potter is a good book</p>
+		</div>
+		<div class="pagination">
+			<ul>
+				<li class="previous"><a class="fui-arrow-left" href="#fakelink"></a></li>
+				<li class="active"><a href="#fakelink">1</a></li>
+				<li><a href="#fakelink">2</a></li>
+				<li><a href="#fakelink">3</a></li>
+				<li><a href="#fakelink">4</a></li>
+				<li><a href="#fakelink">5</a></li>
+				<li><a href="#fakelink">6</a></li>
+				<li><a href="#fakelink">7</a></li>
+				<li><a href="#fakelink">8</a></li>
+				<li class="next"><a class="fui-arrow-right" href="#fakelink"></a></li>
+			</ul>
+		</div>
+		</ul>
+	</div>
+
+	<script
+		src="http://designmodo.github.io/Flat-UI/dist/js/vendor/jquery.min.js"></script>
+	<script
+		src="http://designmodo.github.io/Flat-UI/dist/js/flat-ui.min.js"></script>
+	<script
+		src="http://designmodo.github.io/Flat-UI/docs/assets/js/application.js"></script>
+
+</body>
+</html>

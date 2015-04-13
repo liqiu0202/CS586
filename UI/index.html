@@ -3,16 +3,14 @@
   <title>CSCI 586</title>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/flat-ui.css">
-  <link rel="stylesheet" href="css/demo.css">
-  <script type="text/javascript" src="http://getbootstrap.com/assets/js/jquery.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- prefix free to deal with vendor prefixes -->
   <script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
   
   <link rel="stylesheet" href="css/styles.css">
   <script type="text/javascript" src="js/javascript.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.2"></script>
 
 </head>
 
@@ -26,47 +24,47 @@
 
 <div id="accordian">
   <ul>
-    <li class="active">
+    <li>
       <h3>Book</h3>
       <ul>
-        <li><a href="" name="name">name</a></li>
-        <li><a href="" name="author">author</a></li>
-        <li><a href="" name="language">language</a></li>
+        <li><a href="" id="bookName">name</a></li>
+        <li><a href="" id="bookAuthor">author</a></li>
+        <li><a href="" id="bookLanguage">language</a></li>
       </ul>
     </li>
     <!-- we will keep this LI open by default -->
     <li>
       <h3>Movie</h3>
       <ul>
-        <li><a href="" name="name">name</a></li>
-        <li><a href="" name="writer">writer</a></li>
-        <li><a href="" name="director">director</a></li>
-        <li><a href="" name="starring">starring</a></li>
-        <li><a href="" name="language">language</a></li>
+        <li><a href="" id="movieName">name</a></li>
+        <li><a href="" id="movieWriter">writer</a></li>
+        <li><a href="" id="movieDirector">director</a></li>
+        <li><a href="" id="movieStarring">starring</a></li>
+        <li><a href="" id="movieLanguage">language</a></li>
       </ul>
     </li>
     <li>
       <h3>Author</h3>
       <ul>
-        <li><a href="" name="movieName">movieName</a></li>
-        <li><a href="" name="bookName">bookName</a></li>
+        <li><a href="" id="author_moviename">movieName</a></li>
+        <li><a href="" id="autor_bookname">bookName</a></li>
       </ul>
     </li>
     <li>
       <h3>Actor</h3>
       <ul>
-        <li><a href="" name="movieName">movieName</a></li>
+        <li><a href="" id="actor_moviename">movieName</a></li>
       </ul>
     </li>
     <li>
       <h3>Director</h3>
       <ul>
-        <li><a href="" name="movieName">movieName</a></li>
+        <li><a href="" id="director_moviename">movieName</a></li>
       </ul>
     </li>
   </ul>
 </div>
 
-<div id="result">Result puts here</div>
+<div id="result"></div>
 
 </body>

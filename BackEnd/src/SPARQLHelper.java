@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,12 +15,10 @@ import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
 
 public class SPARQLHelper {
+	private static String[] urlList = {"http://www-scf.usc.edu/~liqiu/cs586/BookLarge.ttl", "http://www-scf.usc.edu/~liqiu/cs586/MovieLarge.ttl"};
+	private static Dataset dataset = DatasetFactory.create(Arrays.asList(urlList));
 	public static ArrayList<Thing> processQuery(String queryString)throws IOException{
-		List<String> namedGraphURIs = new ArrayList<String>() ; 
-		namedGraphURIs.add("http://www-scf.usc.edu/~liqiu/cs586/BookLarge.ttl");
-		namedGraphURIs.add("http://www-scf.usc.edu/~liqiu/cs586/MovieLarge.ttl") ; 
 		Query query = QueryFactory.create(queryString);
-		Dataset dataset = DatasetFactory.create(namedGraphURIs) ;
 		QueryExecution qexec = QueryExecutionFactory.create(query, dataset);
 		//Execute.
 		ArrayList<Thing> res = new ArrayList<Thing>();

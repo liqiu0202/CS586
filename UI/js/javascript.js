@@ -7,23 +7,15 @@ $(document).ready(function(){
 		{
 			$(this).next().slideDown();
 		}
-		event.preventDefault();
-    	return false;
     })
 	var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
 
 	$("#accordian a").on("click", function (e) {
-		    var elementId = $(this).attr("id");
-		    url += document.getElementById(elementId).text;
-		    sendRequest(url);
-	 //    $.ajax({
-		// 	type: "GET",
-		// 	url:'http://localhost:8080/examples/servlets/servlet/QueryProcessor',
-		// 	data: "?target=" + param,
-  //          	//dataType:'json',
-  //          	success: function(response){
-  //          		alert("aa");
-		// 	}
+		e.preventDefault();
+
+	    var elementId = $(this).attr("id");
+	    url += document.getElementById(elementId).text;
+	    sendRequest(url);
 	})
 });
 
@@ -50,9 +42,6 @@ function sendRequest(url) {
 }
 
 function showResult(){
-	alert("show");
-	var result = document.getElementById('result');
-	result.innerHTML = "aaa";
 	if( req.readyState == 4  && req.status == 200 ){
 		var str = "<ul>";
 		var jsonData = JSON.parse( req.responseText );
@@ -60,7 +49,7 @@ function showResult(){
 		for(var i in results ){
 			var link = results[i].wikiLink;
 			var name = results[i].name;
-			str += "<li><a href='" + link + "' target='_blank'>" + name + "</a></li>";
+			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></li>";
 		}
 		str += "</ul>";
 		var result = document.getElementById('result');

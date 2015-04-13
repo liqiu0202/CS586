@@ -27,26 +27,30 @@ public class Book extends Thing{
 	}
 	
 	public static void processQuery(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
-    	
+    	String queryString = "PREFIX Book: <http://dbpedia.org/ontology/Book>\n"
+				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
+				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
+				+ "PREFIX author: <http://dbpedia.org/ontology/author>\n"
+				+ "PREFIX language: <http://dbpedia.org/property/language>\n";
     	String condition = "";
     	String name = request.getParameter("name");
     	String author = request.getParameter("author");
     	String language = request.getParameter("language");
-    	if(name != null )condition += "\nFILTER ( str(?name) =  \"" + name + "\")."; 
+    	if(name != null )condition += "\nFILTER regex( str(?name), '" + name + "', 'i' )."; 
     	
-    	if( author != null )	condition += "\n ?author onto:name ?authorName."
-    			+ " \nFILTER( str(?authorName) = \"" + author + "\").";
+    	if( author != null )	condition += "\n ?author name: ?authorName."
+    			+ "\nFILTER regex( str(?authorName), '" + author + "', 'i' )."; 
     	
-    	if( language != null )condition += "\nFILTER ( str(?language) =  \"" + language + "\").";
+    	if( language != null )condition += "\nFILTER regex( str(?language), '" + language + "', 'i' ).";
 
     	
-    	String queryString = "PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
-    			+ "SELECT DISTINCT ?Book ?wikiLink ?name WHERE{ ?Book a onto:Book; onto:wikiLink ?wikiLink;"
-    			+ " onto:name ?name; onto:author ?author; onto:language ?language."
-    			+ condition + "}";
+    	queryString = queryString 
+    			+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Book a Book:; wikiLink: ?wikiLink;"
+    			+ " name: ?name; author: ?author; language: ?language. FILTER isIRI(?author)."
+    			+ condition + "} LIMIT 100";
     	
     	System.out.println( queryString );
-    	ArrayList<Thing> res = SPARQLHelper.processQuery(queryString);
+    	ArrayList<Thing> res = new SPARQLHelper().processQuery(queryString);
     	ObjectMapper mapper = new ObjectMapper();
 		String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
 		response.getWriter().println( jsonString );

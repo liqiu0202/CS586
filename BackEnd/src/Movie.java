@@ -34,33 +34,43 @@ public class Movie extends Thing{
 	}
 	
 	public static void processQuery(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
-    	
+		String queryString = "PREFIX Movie: <http://dbpedia.org/ontology/Film>\n"
+				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
+				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
+				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
+				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
+				+ "PREFIX director: <http://dbpedia.org/property/director>\n"
+				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n";
     	String condition = "";
     	String name = request.getParameter("name");
     	String author = request.getParameter("writer");
     	String language = request.getParameter("language");
     	String starring = request.getParameter("starring");
     	String director = request.getParameter("director");
-    	if(name != null )condition += "\nFILTER ( str(?name) =  \"" + name + "\")."; 
+    	if(name != null )condition += "\nFILTER regex( str(?name), '" + name + "', 'i' ).";  
     	
-    	if( author != null )	condition += "\n ?author onto:name ?authorName."
-    			+ " \nFILTER( str(?authorName) = \"" + author + "\").";
-    	if( starring != null ) condition += "\n ?starring onto:name ?starringName."
-    			+ " \nFILTER( str(?starringName) = \"" + starring + "\").";
-    	if( director != null ) condition += "\n ?director onto:name ?directorName."
-    			+ " \nFILTER( str(?directorName) = \"" + director + "\").";
+    	if( author != null )	condition += "\n ?author name: ?authorName."
+    			+ "\nFILTER regex( str(?authorName), '" + author + "', 'i' )."; 
     	
-    	if( language != null )condition += "\nFILTER ( str(?language) =  \"" + language + "\").";
+    	if( starring != null ) condition += "\n ?starring name: ?starringName."
+    			+ "\nFILTER regex( str(?starringName), '" + starring + "', 'i' )."; 
+    	if( director != null ) condition += "\n ?director name: ?directorName."
+    			+ "\nFILTER regex( str(?directorName), '" + director + "', 'i' )."; 
+    	
+    	if( language != null )condition += "\nFILTER regex( str(?language), '" + language + "', 'i' ).";
 
     	
-    	String queryString = "PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
-    			+ "SELECT DISTINCT ?Movie ?wikiLink ?name WHERE{ ?Movie a onto:Movie; onto:wikiLink ?wikiLink;"
-    			+ " onto:name ?name; onto:author ?author; onto:starring ?starring;"
-    			+ " onto:director ?director; onto:language ?language."
-    			+ condition + "}";
+    	queryString = queryString
+    			+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Movie a Movie:; wikiLink: ?wikiLink;"
+    			+ " name: ?name; author: ?author; starring: ?starring;"
+    			+ " director: ?director; language: ?language."
+    			+ "FILTER isIRI(?author)."
+    			+ "FILTER isIRI(?starring)."
+    			+ "FILTER isIRI(?director)."
+    			+ condition + "} LIMIT 100";
     	
     	System.out.println( queryString );
-    	ArrayList<Thing> res = SPARQLHelper.processQuery(queryString);
+    	ArrayList<Thing> res = new SPARQLHelper().processQuery(queryString);
     	ObjectMapper mapper = new ObjectMapper();
 		String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
 		response.getWriter().println( jsonString );

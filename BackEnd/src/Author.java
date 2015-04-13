@@ -31,24 +31,32 @@ public class Author extends Thing {
 
 	public static void processQuery(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
-
+		String queryString = "PREFIX Book: <http://dbpedia.org/ontology/Book>\n"
+				+ "PREFIX Movie: <http://dbpedia.org/ontology/Film>\n"
+				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
+				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
+				+ "PREFIX author: <http://dbpedia.org/ontology/author>\n"
+				+ "PREFIX writer:<http://dbpedia.org/ontology/writer>\n";
 		String condition = "";
 		String movieName = request.getParameter("movieName");
 		String bookName = request.getParameter("bookName");
 
 		if (movieName != null)
-			condition += "\n ?Movie a onto:Movie; onto:author ?Author; onto:name ?movieName."
-					+ " \nFILTER( str(?movieName) = \"" + movieName + "\").";
+			condition +=  "\nFILTER regex( str(?movieName), '" + movieName + "', 'i' ).";
+		
 		if (bookName != null)
-			condition += "\n ?Book a onto:Book; onto:author ?Author; onto:name ?bookName."
-					+ " \nFILTER( str(?bookName) = \"" + bookName + "\").";
+			condition +=  "\nFILTER regex( str(?bookName), '" + bookName + "', 'i' ).";
 
-		String queryString = "PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
-				+ "SELECT DISTINCT ?Author ?wikiLink ?name WHERE{ ?Author a onto:Author; onto:wikiLink ?wikiLink;"
-				+ " onto:name ?name." + condition + "}";
+		queryString = queryString
+				+ "SELECT DISTINCT ?wikiLink ?name WHERE{?Movie a Movie:; writer: ?Author; name: ?movieName."
+				+ "\nFILTER isIRI(?Author)."
+				+ " ?Book a Book:; author: ?Author; name: ?bookName."
+				+ "\nFILTER isIRI(?Author)."
+				+ "?Author wikiLink: ?wikiLink;"
+				+ " name: ?name." + condition + "}LIMIT 100";
 
 		System.out.println(queryString);
-		ArrayList<Thing> res = SPARQLHelper.processQuery(queryString);
+		ArrayList<Thing> res = new SPARQLHelper().processQuery(queryString);
     	ObjectMapper mapper = new ObjectMapper();
 		String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
 		response.getWriter().println( jsonString );

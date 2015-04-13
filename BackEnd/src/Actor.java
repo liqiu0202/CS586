@@ -23,20 +23,27 @@ public class Actor extends Thing{
 	
 	public static void processQuery(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
-
+		String queryString = "PREFIX Movie: <http://dbpedia.org/ontology/Film>\n"
+				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
+				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
+				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
+				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
+				+ "PREFIX director: <http://dbpedia.org/property/director>\n"
+				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n";
 		String condition = "";
 		String movieName = request.getParameter("movieName");
 
 		if (movieName != null)
-			condition += "\n ?Movie a onto:Movie; onto:starring ?Actor; onto:name ?movieName."
-					+ " \nFILTER( str(?movieName) = \"" + movieName + "\").";
+			condition += "\nFILTER regex( str(?movieName), '" + movieName + "', 'i' ).";
 
-		String queryString = "PREFIX onto: <http://www-scf.usc.edu/~liqiu/cs586/BookAndMovie.owl#>\n"
-				+ "SELECT DISTINCT ?Actor ?wikiLink ?name WHERE{ ?Actor a onto:Actor; onto:wikiLink ?wikiLink;"
-				+ " onto:name ?name." + condition + "}";
+		queryString = queryString
+				+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Movie a Movie:; starring: ?Actor; name: ?movieName.\n"
+				+ "FILTER isIRI(?Actor).\n"
+				+ "?Actor wikiLink: ?wikiLink;"
+				+ " name: ?name." + condition + "}LIMIT 100";
 
 		System.out.println(queryString);
-		ArrayList<Thing> res = SPARQLHelper.processQuery(queryString);
+		ArrayList<Thing> res = new SPARQLHelper().processQuery(queryString);
     	ObjectMapper mapper = new ObjectMapper();
 		String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(res);
 		response.getWriter().println( jsonString );

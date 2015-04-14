@@ -2,7 +2,12 @@
   width: 200px;
   margin-bottom: 0px
 }
-
+.selected{
+  background: #ECF0F1;
+}
+.selected h4{
+  color: black;
+}
 .active h4{
   color: black;
 }
@@ -10,23 +15,24 @@
 .optionTable{
   width: 200px;
   position: absolute;
-  left: 210px;
+  left: 220px;
   top: 284px;
 }
 
 #submitButton{
-  margin-left: 50px;
+  margin-left: 70px;
   margin-top: 5px;
 }
 
 #result_area{
   position: absolute;
-  left: 400px;
+  left: 420px;
   top: 300px;
 }
 
 #paginationBar{
-  margin-top: 60px;
+  position: absolute;
+  top: 620px;
   margin-left: 420px;
 }
 

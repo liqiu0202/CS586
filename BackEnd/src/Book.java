@@ -31,7 +31,8 @@ public class Book extends Thing{
 				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
 				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
 				+ "PREFIX author: <http://dbpedia.org/ontology/author>\n"
-				+ "PREFIX language: <http://dbpedia.org/property/language>\n";
+				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
+				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
     	String condition = "";
     	String name = request.getParameter("name");
     	String author = request.getParameter("author");
@@ -45,7 +46,7 @@ public class Book extends Thing{
 
     	
     	queryString = queryString 
-    			+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Book a Book:; wikiLink: ?wikiLink;"
+    			+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Book a Book:; wikiLink: ?wikiLink;"
     			+ " name: ?name; author: ?author; language: ?language. FILTER isIRI(?author)."
     			+ condition + "} LIMIT 100";
     	

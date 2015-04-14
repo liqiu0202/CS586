@@ -14,6 +14,7 @@ public class Movie extends Thing{
 	private String starring;
 	private String language;
 	private String author;
+	private String baseOnBookLink;
 	public String getDirector() {
 		return director;
 	}
@@ -35,6 +36,7 @@ public class Movie extends Thing{
 	
 	public static void processQuery(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
 		String queryString = "PREFIX Movie: <http://dbpedia.org/ontology/Film>\n"
+				+ "PREFIX Book: <http://dbpedia.org/ontology/Book>\n"
 				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
 				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
 				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
@@ -47,6 +49,7 @@ public class Movie extends Thing{
     	String language = request.getParameter("language");
     	String starring = request.getParameter("starring");
     	String director = request.getParameter("director");
+    	String basedOnName = request.getParameter("baseOn");
     	if(name != null )condition += "\nFILTER regex( str(?name), '" + name + "', 'i' ).";  
     	
     	if( author != null )	condition += "\n ?author name: ?authorName."
@@ -59,7 +62,8 @@ public class Movie extends Thing{
     	
     	if( language != null )condition += "\nFILTER regex( str(?language), '" + language + "', 'i' ).";
 
-    	
+    	if( basedOnName != null ) condition += "?Book a Book:; name: ?name."
+    			+ "\nFILTER regex( str(?name), '" + basedOnName + "', 'i' ).";
     	queryString = queryString
     			+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Movie a Movie:; wikiLink: ?wikiLink;"
     			+ " name: ?name; author: ?author; starring: ?starring;"

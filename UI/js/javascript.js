@@ -1,22 +1,39 @@
 $(document).ready(function(){
-    $("#accordian h3").click(function () {
-		//slide up all the link lists
-		$("#accordian ul ul").slideUp();
-		//slide down the link list below the h3 clicked - only if its closed
-		if(!$(this).next().is(":visible"))
-		{
-			$(this).next().slideDown();
-		}
-    })
-	var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
+	$("#BookSpecs").hide();
+	$("#MovieSpecs").hide();
+	$("#AuthorSpecs").hide();
+	$("#ActorSpecs").hide();
+	$("#DirectorSpecs").hide();
+	$("#paginationBar").hide();
 
-	$("#accordian a").on("click", function (e) {
+	$("#Book, #Movie, #Author, #Actor, #Director").on("click", function (e) {
+		// Prevent page from refreshing
 		e.preventDefault();
-
+		var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
 	    var elementId = $(this).attr("id");
-	    url += document.getElementById(elementId).text;
+
+	    url += document.getElementById(elementId).innerHTML;
 	    sendRequest(url);
 	})
+
+	var previousId = "";
+	$("#Book, #Movie, #Author, #Actor, #Director").hover(
+		function(){
+		$("#"+previousId+"Specs").hide();
+		var elementId = $(this).attr("id");
+		previousId = elementId;
+		
+		$("#"+elementId).closest('dl').addClass("active");
+		$("#"+elementId+"Specs").show();
+		},function(){
+			var elementId = $(this).attr("id");
+			$("#"+elementId).closest('dl').removeClass("active");
+		})
+
+	$("#submitButton").on("click", function(e){
+		$("#paginationBar").show();
+	})
+
 });
 
 function sendRequest(url) {
@@ -30,18 +47,20 @@ function sendRequest(url) {
 		}catch( e ){
 		}
 	}
-	if( req ){
+	alert(typeof req);
+	if( req != null){
 		req.open("GET", url, false);
 		req.onreadystatechange = showResult;
 		req.setRequestHeader("Connection", "Close");
 		req.setRequestHeader("Method", "GET" + url + "HTTP/1.1" );
 		req.send();
 	}else{
-		alert("Sorry, but I couldn't create and XMLHttpRequest");
+		alert("Sorry, but I couldn't create an XMLHttpRequest");
 	}
 }
 
 function showResult(){
+
 	if( req.readyState == 4  && req.status == 200 ){
 		var str = "<ul>";
 		var jsonData = JSON.parse( req.responseText );
@@ -52,8 +71,8 @@ function showResult(){
 			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></li>";
 		}
 		str += "</ul>";
-		var result = document.getElementById('result');
+		var result = document.getElementById('result_area');
 		result.innerHTML = str;
 	}
-	
+
 }

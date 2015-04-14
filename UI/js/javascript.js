@@ -6,14 +6,15 @@ $(document).ready(function(){
 	$("#DirectorSpecs").hide();
 	$("#paginationBar").hide();
 
+	var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
+
+
 	$("#Book, #Movie, #Author, #Actor, #Director").on("click", function (e) {
 		// Prevent page from refreshing
 		e.preventDefault();
-		var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
-	    var elementId = $(this).attr("id");
+		var elementId = $(this).attr("id");
 
 	    url += document.getElementById(elementId).innerHTML;
-	    sendRequest(url);
 	})
 
 	var previousId = "";
@@ -30,8 +31,13 @@ $(document).ready(function(){
 			$("#"+elementId).closest('dl').removeClass("active");
 		})
 
+	$("#menu").hover(function(){},function(){
+		$("#"+previousId+"Specs").hide();
+	})
+
 	$("#submitButton").on("click", function(e){
 		$("#paginationBar").show();
+		sendRequest(url);
 	})
 
 });
@@ -47,13 +53,13 @@ function sendRequest(url) {
 		}catch( e ){
 		}
 	}
-	alert(typeof req);
+
 	if( req != null){
-		req.open("GET", url, false);
+		req.open("GET", url, true);
 		req.onreadystatechange = showResult;
 		req.setRequestHeader("Connection", "Close");
 		req.setRequestHeader("Method", "GET" + url + "HTTP/1.1" );
-		req.send();
+		req.send(null);
 	}else{
 		alert("Sorry, but I couldn't create an XMLHttpRequest");
 	}
@@ -65,14 +71,14 @@ function showResult(){
 		var str = "<ul>";
 		var jsonData = JSON.parse( req.responseText );
 		results = jsonData;
-		for(var i in results ){
+
+		for(var i=0; i<10; i++){
 			var link = results[i].wikiLink;
 			var name = results[i].name;
 			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></li>";
 		}
 		str += "</ul>";
-		var result = document.getElementById('result_area');
-		result.innerHTML = str;
+		document.getElementById('result_area').innerHTML = str;
 	}
 
 }

@@ -2,12 +2,9 @@
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 
-import com.hp.hpl.jena.query.Dataset;
-import com.hp.hpl.jena.query.DatasetFactory;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -42,14 +39,17 @@ public class SPARQLHelper {
 		ArrayList<Thing> res = new ArrayList<Thing>();
 		
 		Iterator<QuerySolution> rs = qexec.execSelect();
-		
+		HashSet<String> hashSet = new HashSet<String>();
 		while( rs.hasNext() ){
 			QuerySolution soln = rs.next();
 			Thing thing = new Thing();
 			if( soln.getResource("wikiLink") != null ) thing.setWikiLink( soln.getResource("wikiLink").getURI() );
 			if( soln.getLiteral("name") != null ) thing.setName(soln.getLiteral("name").getString() );
 			if( soln.getLiteral("description") != null ) thing.setDescription(soln.getLiteral("description").getString() );
-			res.add( thing );
+			if( !hashSet.contains( thing.getWikiLink() ) ){//remove duplicate records
+				hashSet.add( thing.getWikiLink());
+				res.add( thing );
+			}
 		}
 		return res;	
 

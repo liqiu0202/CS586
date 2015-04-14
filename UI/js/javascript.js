@@ -118,7 +118,7 @@ function sendRequest(url) {
 function showResult(){
 	var currentIndex = index;
 	var start = (currentIndex - 1) * 5;
-	var end = start + 4;
+	var end = start + 2;
 
 	if( req.readyState == 4  && req.status == 200 ){
 		var str = "<ul>";
@@ -133,7 +133,8 @@ function showResult(){
 		for(var i=start; i<=end; i++){
 			var link = results[i].wikiLink;
 			var name = results[i].name;
-			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></li>";
+			var description = results[i].description;
+			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a><p>"+description+"</p></li>";
 		}
 		str += "</ul>";
 		document.getElementById('result_area').innerHTML = str;

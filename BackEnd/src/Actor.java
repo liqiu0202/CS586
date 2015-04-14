@@ -29,7 +29,8 @@ public class Actor extends Thing{
 				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
 				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
 				+ "PREFIX director: <http://dbpedia.org/property/director>\n"
-				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n";
+				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n"
+				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
 		String condition = "";
 		String movieName = request.getParameter("movieName");
 
@@ -37,9 +38,9 @@ public class Actor extends Thing{
 			condition += "\nFILTER regex( str(?movieName), '" + movieName + "', 'i' ).";
 
 		queryString = queryString
-				+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Movie a Movie:; starring: ?Actor; name: ?movieName.\n"
+				+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Movie a Movie:; starring: ?Actor; name: ?movieName.\n"
 				+ "FILTER isIRI(?Actor).\n"
-				+ "?Actor wikiLink: ?wikiLink;"
+				+ "?Actor wikiLink: ?wikiLink; description: ?description;"
 				+ " name: ?name." + condition + "}LIMIT 100";
 
 		System.out.println(queryString);

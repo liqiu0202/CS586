@@ -36,7 +36,8 @@ public class Author extends Thing {
 				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
 				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
 				+ "PREFIX author: <http://dbpedia.org/ontology/author>\n"
-				+ "PREFIX writer:<http://dbpedia.org/ontology/writer>\n";
+				+ "PREFIX writer:<http://dbpedia.org/ontology/writer>\n"
+				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
 		String condition = "";
 		String movieName = request.getParameter("movieName");
 		String bookName = request.getParameter("bookName");
@@ -48,11 +49,11 @@ public class Author extends Thing {
 			condition +=  "\nFILTER regex( str(?bookName), '" + bookName + "', 'i' ).";
 
 		queryString = queryString
-				+ "SELECT DISTINCT ?wikiLink ?name WHERE{?Movie a Movie:; writer: ?Author; name: ?movieName."
+				+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{?Movie a Movie:; writer: ?Author; name: ?movieName."
 				+ "\nFILTER isIRI(?Author)."
 				+ " ?Book a Book:; author: ?Author; name: ?bookName."
 				+ "\nFILTER isIRI(?Author)."
-				+ "?Author wikiLink: ?wikiLink;"
+				+ "?Author wikiLink: ?wikiLink; description: ?description;"
 				+ " name: ?name." + condition + "}LIMIT 100";
 
 		System.out.println(queryString);

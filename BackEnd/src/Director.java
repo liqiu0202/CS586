@@ -30,7 +30,8 @@ public class Director extends Thing{
 				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
 				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
 				+ "PREFIX director: <http://dbpedia.org/property/director>\n"
-				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n";
+				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n"
+				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
 		String condition = "";
 		String movieName = request.getParameter("movieName");
 
@@ -38,9 +39,9 @@ public class Director extends Thing{
 			condition += "\nFILTER regex( str(?movieName), '" + movieName + "', 'i' ).";
 
 		queryString = queryString
-				+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Movie a Movie:; director: ?Director; name: ?movieName.\n"
+				+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Movie a Movie:; director: ?Director; name: ?movieName.\n"
 				+ "FILTER isIRI(?Director).\n"
-				+ "?Director wikiLink: ?wikiLink;"
+				+ "?Director wikiLink: ?wikiLink; description: ?description;"
 				+ " name: ?name." + condition + "}LIMIT 100";
 		System.out.println(queryString);
 		ArrayList<Thing> res = new SPARQLHelper().processQuery(queryString);

@@ -42,7 +42,8 @@ public class Movie extends Thing{
 				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
 				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
 				+ "PREFIX director: <http://dbpedia.org/property/director>\n"
-				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n";
+				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n"
+				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
     	String condition = "";
     	String name = request.getParameter("name");
     	String author = request.getParameter("writer");
@@ -65,7 +66,7 @@ public class Movie extends Thing{
     	if( basedOnName != null ) condition += "?Book a Book:; name: ?name."
     			+ "\nFILTER regex( str(?name), '" + basedOnName + "', 'i' ).";
     	queryString = queryString
-    			+ "SELECT DISTINCT ?wikiLink ?name WHERE{ ?Movie a Movie:; wikiLink: ?wikiLink;"
+    			+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Movie a Movie:; wikiLink: ?wikiLink; description: ?description;"
     			+ " name: ?name; author: ?author; starring: ?starring;"
     			+ " director: ?director; language: ?language."
     			+ "FILTER isIRI(?author)."

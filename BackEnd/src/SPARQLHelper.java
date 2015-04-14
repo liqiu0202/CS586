@@ -48,6 +48,7 @@ public class SPARQLHelper {
 			Thing thing = new Thing();
 			if( soln.getResource("wikiLink") != null ) thing.setWikiLink( soln.getResource("wikiLink").getURI() );
 			if( soln.getLiteral("name") != null ) thing.setName(soln.getLiteral("name").getString() );
+			if( soln.getLiteral("description") != null ) thing.setDescription(soln.getLiteral("description").getString() );
 			res.add( thing );
 		}
 		return res;	

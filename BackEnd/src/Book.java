@@ -46,7 +46,7 @@ public class Book extends Thing{
 
     	
     	queryString = queryString 
-    			+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Book a Book:; wikiLink: ?wikiLink;"
+    			+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Book a Book:; wikiLink: ?wikiLink; description: ?description;"
     			+ " name: ?name; author: ?author; language: ?language. FILTER isIRI(?author)."
     			+ condition + "} LIMIT 100";
     	

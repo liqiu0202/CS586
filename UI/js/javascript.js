@@ -1,3 +1,6 @@
+
+var index = 1;
+
 $(document).ready(function(){
 	$("#BookSpecs").hide();
 	$("#MovieSpecs").hide();
@@ -11,7 +14,7 @@ $(document).ready(function(){
 	var param = "";
 	var previousId = "";
 	var perviousSelected = "";
-
+	var lastId = 1;
 	/* ---  Handle nav tabs --- */
 	$("#sparqlSearch").on("click", function(e){
 		$("#menu").hide();
@@ -55,6 +58,30 @@ $(document).ready(function(){
 		$("#"+previousId+"Specs").hide();
 	})
 
+	/* --- Pagination Handler --- */
+	$("#1, #2, #3, #4, #5, #last, #next").on('click', function(e){
+		var currentId = $(this).attr("id");
+
+		if(currentId == "last"){
+			if(lastId == 1) return;
+			$("#last").closest('.pageBar').removeClass('active');
+			currentId = lastId - 1;
+			$("#"+currentId).closest('.pageBar').addClass('active');
+		}
+		if(currentId == "next"){
+			if(lastId % 5 == 0){
+				for(var i = 1; i<=5; i++){
+					$("#"+i).html(lastId+i);
+				}
+			}
+			currentId = parseInt(lastId % 5 + 1);
+		}
+
+		index = parseInt($("#"+currentId).text());
+		lastId = index;
+		showResult();
+	})
+
 	/* --- Handle submit button --- */
 	$("#submitButton").on("click", function(e){
 		sendRequest(param);
@@ -62,7 +89,6 @@ $(document).ready(function(){
 	})
 
 });
-
 
 
 
@@ -90,6 +116,9 @@ function sendRequest(url) {
 }
 
 function showResult(){
+	var currentIndex = index;
+	var start = (currentIndex - 1) * 5;
+	var end = start + 4;
 
 	if( req.readyState == 4  && req.status == 200 ){
 		var str = "<ul>";
@@ -101,7 +130,7 @@ function showResult(){
 			document.getElementById('result_area').innerHTML = str;
 			return;
 		}
-		for(var i=0; i<10; i++){
+		for(var i=start; i<=end; i++){
 			var link = results[i].wikiLink;
 			var name = results[i].name;
 			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></li>";
@@ -111,3 +140,23 @@ function showResult(){
 	}
 
 }
+
+function paginationHandler(currentId){
+	if(currentId == "last"){
+		var lastElmt = document.getElementById(lastId);
+		lastElmt.className = "";
+
+		currentId = lastId - 1;
+
+		var currentElmt = document.getElementById(currentId);
+		currentElmt.className += "active";
+	}
+	if(currentId == "next"){
+		currentId == lastId + 1;
+	}
+	index = parseInt(currentId);
+	lastId = index;
+	showResult();
+}
+
+

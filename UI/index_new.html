@@ -59,9 +59,9 @@
 				style='margin-bottom: 0px'>
 				<div id="navbar-collapse-01" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-left">
-						<li data-tabid="1" class="tabs"><a href="#fakelink">Faceted
+						<li data-tabid="1" class="tabs"><a href="#fakelink" id="facetedSearch">Faceted
 								Search</a></li>
-						<li data-tabid="2" class="tabs"><a href="#fakelink">Sparql
+						<li data-tabid="2" class="tabs"><a href="#fakelink" id="sparqlSearch">Sparql
 								Search</a></li>
 						<li><a href="#fakelink">About Us</a></li>
 						<li><button id="submitButton" class="btn btn-block btn-lg btn-primary">Submit</button></li>
@@ -150,6 +150,10 @@
             Movie_Name
          </label>
 	</div>
+</div>
+
+<div id="sqlInput">
+	<textarea id="text_area" rows="10" cols="35" style="margin-top:10px" placeholder="Enter SQL here"></textarea>
 </div>
 
 

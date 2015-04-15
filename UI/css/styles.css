@@ -18,6 +18,9 @@
   left: 220px;
   top: 284px;
 }
+.input-sm{
+  width: 160px;
+}
 
 #submitButton{
   margin-left: 70px;
@@ -28,6 +31,19 @@
   position: absolute;
   left: 420px;
   top: 300px;
+}
+#result_area p{
+  line-height: 22px;
+}
+.resultTitle{
+  font-size: 19px;
+}
+.resultLink{
+  font-size: 14px;
+  color: #3498DB;
+}
+.resultContent{
+  font-size: 16px;
 }
 
 #paginationBar{

@@ -13,10 +13,14 @@
 }
 
 .optionTable{
-  width: 200px;
+  width: 300px;
   position: absolute;
   left: 220px;
   top: 284px;
+}
+.inputBox{
+  width: 150px;
+  height: 30px;
 }
 
 #submitButton{
@@ -32,7 +36,7 @@
 
 #paginationBar{
   position: absolute;
-  top: 620px;
-  margin-left: 420px;
+  top: 640px;
+  margin-left: 430px;
 }
 

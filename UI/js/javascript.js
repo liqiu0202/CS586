@@ -12,6 +12,7 @@ $(document).ready(function(){
 
 	var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
 	var param = "";
+	var target = "";
 	var previousId = "";
 	var perviousSelected = "";
 	var lastId = 1;
@@ -35,7 +36,10 @@ $(document).ready(function(){
 		perviousSelected = elementId;
 		$("#"+elementId).closest('dl').addClass("selected");
 
+		target = elementId;
+
 		param = "";
+		
 	    param = url + document.getElementById(elementId).innerHTML;
 	})
 	$("#Book, #Movie, #Author, #Actor, #Director").hover(
@@ -54,9 +58,10 @@ $(document).ready(function(){
 			$("#"+elementId).closest('dl').removeClass("active");
 		}
 	)
-	$("#menu").hover(function(){},function(){
-		$("#"+previousId+"Specs").hide();
-	})
+	// $("#menu").hover(function(){},function(){
+	// 	$("#"+previousId+"Specs").hide();
+	// })
+	
 
 	/* --- Pagination Handler --- */
 	$("#1, #2, #3, #4, #5, #last, #next").on('click', function(e){
@@ -84,7 +89,37 @@ $(document).ready(function(){
 
 	/* --- Handle submit button --- */
 	$("#submitButton").on("click", function(e){
-		sendRequest(param);
+		var detail = "";
+		var urlToGo = "";
+		switch(target){
+			case "Book":
+				detail += ($("#BookName").is(':checked')) ? "&name=" + $("#bookNameStr").val() : "";
+				detail += ($("#BookAuthor").is(':checked')) ? "&author=" + $("#bookAuthorStr").val() : "";
+				detail += ($("#BookLanguage").is(':checked')) ? "&language=" + $("#bookLanguageStr").val() : "";
+				break;
+			case "Movie":
+				detail += ($("#MovieName").is(':checked')) ? "&name=" + $("#movieNameStr").val() : "";
+				detail += ($("#MovieWriter").is(':checked')) ? "&writer=" + $("#movieWriterStr").val() : "";
+				detail += ($("#MovieDirector").is(':checked')) ? "&director=" + $("#movieDirectorStr").val() : "";
+				detail += ($("#MovieStarring").is(':checked')) ? "&starring=" + $("#movieStarringStr").val() : "";
+				detail += ($("#MovieLanguage").is(':checked')) ? "&language=" + $("#movieLanguageStr").val() : "";
+				break;
+			case "Author":
+				detail += ($("#AuthorMovieName").is(':checked')) ? "&movieName=" + $("#authorMovieNameStr").val() : "";
+				detail += ($("#AuthorBookName").is(':checked')) ? "&bookName=" + $("#authorBookNameStr").val() : "";
+				break;
+			case "Actor":
+				detail += ($("#ActorMovieName").is(':checked')) ? "&movieName=" + $("#actorMovieNameStr").val() : "";
+				break;
+			case "Director":
+				detail += ($("#DirectorMovieName").is(':checked')) ? "&movieName=" + $("#directorMovieNameStr").val() : "";
+				break;
+		}
+		
+		urlToGo = param + detail;
+
+		sendRequest(urlToGo);
+
 		$("#paginationBar").show();
 	})
 
@@ -128,6 +163,7 @@ function showResult(){
 		if(results.length == 0){
 			str += "<h2>No Result Found</h2></ul>";
 			document.getElementById('result_area').innerHTML = str;
+			
 			return;
 		}
 		for(var i=start; i<=end; i++){
@@ -141,7 +177,7 @@ function showResult(){
 				tmp += descriptionArray[j]; 
 			}
 			tmp += " ... ";
-			str += "<a href='" + link + "' target='_blank'>" + name + "</a><p style='font-size:15px'><span style='color:#3498DB'>" + link + "</span><br>"+tmp+"</p>";
+			str += "<h6><b><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></b></h6><span>"+ tmp +"</span>";
 		}
 		str += "</div>";
 		document.getElementById('result_area').innerHTML = str;
@@ -149,22 +185,22 @@ function showResult(){
 
 }
 
-function paginationHandler(currentId){
-	if(currentId == "last"){
-		var lastElmt = document.getElementById(lastId);
-		lastElmt.className = "";
+// function paginationHandler(currentId){
+// 	if(currentId == "last"){
+// 		var lastElmt = document.getElementById(lastId);
+// 		lastElmt.className = "";
 
-		currentId = lastId - 1;
+// 		currentId = lastId - 1;
 
-		var currentElmt = document.getElementById(currentId);
-		currentElmt.className += "active";
-	}
-	if(currentId == "next"){
-		currentId == lastId + 1;
-	}
-	index = parseInt(currentId);
-	lastId = index;
-	showResult();
-}
+// 		var currentElmt = document.getElementById(currentId);
+// 		currentElmt.className += "active";
+// 	}
+// 	if(currentId == "next"){
+// 		currentId == lastId + 1;
+// 	}
+// 	index = parseInt(currentId);
+// 	lastId = index;
+// 	showResult();
+// }
 
 

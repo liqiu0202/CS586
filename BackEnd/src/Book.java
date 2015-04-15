@@ -27,12 +27,7 @@ public class Book extends Thing{
 	}
 	
 	public static void processQuery(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
-    	String queryString = "PREFIX Book: <http://dbpedia.org/ontology/Book>\n"
-				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
-				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
-				+ "PREFIX author: <http://dbpedia.org/ontology/author>\n"
-				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
-				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
+    	String queryString = SPARQLHelper.prefixString;
     	String condition = "";
     	String name = request.getParameter("name");
     	String author = request.getParameter("author");

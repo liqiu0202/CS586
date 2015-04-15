@@ -30,6 +30,16 @@ public class SPARQLHelper {
 //		}
 //		return res;		
 //    }
+	public static final String prefixString = "PREFIX Movie: <http://dbpedia.org/ontology/Film>\n"
+			+ "PREFIX Book: <http://dbpedia.org/ontology/Book>\n"
+			+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
+			+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
+			+ "PREFIX author: <http://dbpedia.org/ontology/author>\n"
+			+ "PREFIX writer:<http://dbpedia.org/ontology/writer>\n"
+			+ "PREFIX language: <http://dbpedia.org/property/language>\n"
+			+ "PREFIX director: <http://dbpedia.org/property/director>\n"
+			+ "PREFIX starring: <http://dbpedia.org/property/starring>\n"
+			+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
 	public ArrayList<Thing> processQuery(String queryString) throws IOException{
 		Query query = QueryFactory.create(queryString);
 		QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);

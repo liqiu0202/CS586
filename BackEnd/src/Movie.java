@@ -39,22 +39,22 @@ public class Movie extends Thing{
 				+ "PREFIX Book: <http://dbpedia.org/ontology/Book>\n"
 				+ "PREFIX wikiLink: <http://www.w3.org/ns/prov#wasDerivedFrom>\n"
 				+ "PREFIX name: <http://xmlns.com/foaf/0.1/name>\n"
-				+ "PREFIX author:<http://dbpedia.org/ontology/writer>\n"
+				+ "PREFIX writer:<http://dbpedia.org/ontology/writer>\n"
 				+ "PREFIX language: <http://dbpedia.org/property/language>\n"
 				+ "PREFIX director: <http://dbpedia.org/property/director>\n"
 				+ "PREFIX starring: <http://dbpedia.org/property/starring>\n"
 				+ "PREFIX description: <http://dbpedia.org/ontology/abstract>";
     	String condition = "";
     	String name = request.getParameter("name");
-    	String author = request.getParameter("writer");
+    	String writer = request.getParameter("writer");
     	String language = request.getParameter("language");
     	String starring = request.getParameter("starring");
     	String director = request.getParameter("director");
     	String basedOnName = request.getParameter("baseOn");
     	if(name != null )condition += "\nFILTER regex( str(?name), '" + name + "', 'i' ).";  
     	
-    	if( author != null )	condition += "\n ?author name: ?authorName."
-    			+ "\nFILTER regex( str(?authorName), '" + author + "', 'i' )."; 
+    	if( writer != null )	condition += "\n ?writer name: ?writerName."
+    			+ "\nFILTER regex( str(?writerName), '" + writer + "', 'i' )."; 
     	
     	if( starring != null ) condition += "\n ?starring name: ?starringName."
     			+ "\nFILTER regex( str(?starringName), '" + starring + "', 'i' )."; 
@@ -67,9 +67,9 @@ public class Movie extends Thing{
     			+ "\nFILTER regex( str(?name), '" + basedOnName + "', 'i' ).";
     	queryString = queryString
     			+ "SELECT DISTINCT ?wikiLink ?name ?description WHERE{ ?Movie a Movie:; wikiLink: ?wikiLink; description: ?description;"
-    			+ " name: ?name; author: ?author; starring: ?starring;"
+    			+ " name: ?name; writer: ?writer; starring: ?starring;"
     			+ " director: ?director; language: ?language."
-    			+ "FILTER isIRI(?author)."
+    			+ "FILTER isIRI(?writer)."
     			+ "FILTER isIRI(?starring)."
     			+ "FILTER isIRI(?director)."
     			+ condition + "} LIMIT 100";

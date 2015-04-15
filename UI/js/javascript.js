@@ -15,7 +15,7 @@ $(document).ready(function(){
 	var target = "";
 	var previousId = "";
 	var perviousSelected = "";
-	var lastId = 1;
+	var lastIndex = 1;
 	/* ---  Handle nav tabs --- */
 	$("#sparqlSearch").on("click", function(e){
 		$("#menu").hide();
@@ -68,27 +68,37 @@ $(document).ready(function(){
 		var currentId = $(this).attr("id");
 
 		if(currentId == "last"){
-			if(lastId == 1) return;
-			$("#last").closest('.pageBar').removeClass('active');
-			currentId = lastId - 1;
-			$("#"+currentId).closest('.pageBar').addClass('active');
+			if(lastIndex == 1) return;
+			if(lastIndex % 5 == 1){
+				for(var i = 5; i>=1; i--){
+					$("#"+(6-i)).html(lastIndex-i);
+				}
+				currentId = 5;
+			}else if(lastIndex % 5 == 0){
+				currentId = 4;
+			}else{
+				currentId = parseInt(lastIndex % 5 - 1);
+			}
+			
+			
 		}
 		if(currentId == "next"){
-			if(lastId % 5 == 0){
+			if(lastIndex % 5 == 0){
 				for(var i = 1; i<=5; i++){
-					$("#"+i).html(lastId+i);
+					$("#"+i).html(lastIndex+i);
 				}
 			}
-			currentId = parseInt(lastId % 5 + 1);
+			currentId = parseInt(lastIndex % 5 + 1);
 		}
 
 		index = parseInt($("#"+currentId).text());
-		lastId = index;
+		lastIndex = index;
 		showResult();
 	})
 
 	/* --- Handle submit button --- */
 	$("#submitButton").on("click", function(e){
+		index = 1;
 		var detail = "";
 		var urlToGo = "";
 		switch(target){
@@ -119,8 +129,9 @@ $(document).ready(function(){
 		urlToGo = param + detail;
 
 		sendRequest(urlToGo);
-
-		$("#paginationBar").show();
+		var flag = showResult();
+		(flag) ? $("#paginationBar").show() : $("#paginationBar").hide();
+		
 	})
 
 });
@@ -161,10 +172,10 @@ function showResult(){
 		results = jsonData;
 
 		if(results.length == 0){
-			str += "<h2>No Result Found</h2></ul>";
+			str += "<h3>No Result Found</h3></ul>";
 			document.getElementById('result_area').innerHTML = str;
 			
-			return;
+			return false;
 		}
 		for(var i=start; i<=end; i++){
 			var link = results[i].wikiLink;
@@ -177,29 +188,31 @@ function showResult(){
 				tmp += descriptionArray[j]; 
 			}
 			tmp += " ... ";
-			str += "<a href='" + link + "' target='_blank'>" + name + "</a><p style='font-size:15px'><span style='color:#3498DB'>" + link + "</span><br>"+tmp+"</p>";
+			str += "<h6 class='resultTitle'><b><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></b></h6><span class='resultContent'>"+ tmp +"</span>";
 		}
 		str += "</div>";
 		document.getElementById('result_area').innerHTML = str;
+		return true;
 	}
 
 }
 
 // function paginationHandler(currentId){
 // 	if(currentId == "last"){
-// 		var lastElmt = document.getElementById(lastId);
+// 		var lastElmt = document.getElementById(lastIndex);
 // 		lastElmt.className = "";
 
-// 		currentId = lastId - 1;
+// 		currentId = lastIndex - 1;
 
 // 		var currentElmt = document.getElementById(currentId);
 // 		currentElmt.className += "active";
 // 	}
 // 	if(currentId == "next"){
-// 		currentId == lastId + 1;
+// 		currentId == lastIndex + 1;
 // 	}
 // 	index = parseInt(currentId);
-// 	lastId = index;
+// 	lastIndex = index;
 // 	showResult();
 // }
+
 

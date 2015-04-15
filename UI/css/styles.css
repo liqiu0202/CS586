@@ -13,10 +13,14 @@
 }
 
 .optionTable{
-  width: 200px;
+  width: 300px;
   position: absolute;
   left: 220px;
   top: 284px;
+}
+.inputBox{
+  width: 150px;
+  height: 30px;
 }
 
 #submitButton{
@@ -27,12 +31,19 @@
 #result_area{
   position: absolute;
   left: 420px;
-  top: 300px;
+  top: 280px;
+  line-height: 80%;
 }
 
 #paginationBar{
   position: absolute;
-  top: 620px;
-  margin-left: 420px;
+  top: 630px;
+  left: 420px;
 }
 
+.resultTitle{
+  font-size: 21px;
+}
+.resultContent{
+  font-size: 16px;
+}

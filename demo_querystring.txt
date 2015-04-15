@@ -1,0 +1,2 @@
+SELECT DISTINCT * WHERE{?Book a Book:; wikiLink: ?wikiLink; name: ?name; description: ?description.}LIMIT 100
+

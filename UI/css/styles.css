@@ -13,14 +13,10 @@
 }
 
 .optionTable{
-  width: 300px;
+  width: 200px;
   position: absolute;
   left: 220px;
   top: 284px;
-}
-.inputBox{
-  width: 150px;
-  height: 30px;
 }
 
 #submitButton{
@@ -31,19 +27,66 @@
 #result_area{
   position: absolute;
   left: 420px;
-  top: 280px;
-  line-height: 80%;
+  top: 300px;
 }
 
 #paginationBar{
   position: absolute;
-  top: 630px;
-  left: 420px;
+  top: 620px;
+  margin-left: 420px;
 }
 
-.resultTitle{
-  font-size: 21px;
+.custom-tagsinput {
+    border-radius: 6px;
+    font-size: 0;
+    padding: 6px 1px 1px 6px;
+    text-align: left;
 }
-.resultContent{
-  font-size: 16px;
+.custom-tagsinput .tag {
+    background-color: #ebedef;
+    border-radius: 4px;
+    color: #7b8996;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 27px;
+    line-height: 15px;
+    margin: 0 5px 5px 0;
+    overflow: hidden;
+    padding: 6px 21px;
+    position: relative;
+    transition: all 0.25s linear 0s;
+    vertical-align: middle;
+}
+.custom-tagsinput .tag > span {
+    bottom: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0;
+    padding: 0 10px 0 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    text-decoration: none;
+    top: 0;
+    transition: opacity 0.25s linear 0s;
+    width: 100%;
+    z-index: 2;
+}
+.custom-tagsinput .tag > span::after {
+    -moz-osx-font-smoothing: grayscale;
+    content: "";
+    font-family: Flat-UI-Pro-Icons;
+    line-height: 27px;
+}
+.custom-tagsinput .tag:hover {
+    background-color: #16a085;
+    color: #fff;
+    padding-left: 14px;
+    padding-right: 28px;
+}
+.custom-tagsinput .tag:hover > span {
+    filter: none;
+    opacity: 1;
 }

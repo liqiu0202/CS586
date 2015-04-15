@@ -177,7 +177,7 @@ function showResult(){
 				tmp += descriptionArray[j]; 
 			}
 			tmp += " ... ";
-			str += "<h6><b><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></b></h6><span>"+ tmp +"</span>";
+			str += "<a href='" + link + "' target='_blank'>" + name + "</a><p style='font-size:15px'><span style='color:#3498DB'>" + link + "</span><br>"+tmp+"</p>";
 		}
 		str += "</div>";
 		document.getElementById('result_area').innerHTML = str;
@@ -202,5 +202,4 @@ function showResult(){
 // 	lastId = index;
 // 	showResult();
 // }
-
 

@@ -10,6 +10,8 @@ $(document).ready(function(){
 	$("#paginationBar").hide();
 	$("#sqlInput").hide();
 
+	init();
+
 	var url = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?target=";
 	var param = "";
 	var target = "";
@@ -17,19 +19,24 @@ $(document).ready(function(){
 	var perviousSelected = "";
 	var lastIndex = 1;
 	var handler = false;
+
 	/* ---  Handle nav tabs --- */
+
 	$("#sparqlSearch").on("click", function(e){
 		$("#menu").hide();
 		$("#sqlInput").show();
 		handler = true;
+		param = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?";
 	})
 	$("#facetedSearch").on("click", function(e){
 		$("#sqlInput").hide();
 		$("#menu").show();
 		handler = false;
+		param = "";
 	})
 
 	/* --- Handle menu tabs --- */
+
 	$("#Book, #Movie, #Author, #Actor, #Director").on("click", function (e) {
 		// Prevent page from refreshing
 		e.preventDefault();
@@ -81,9 +88,7 @@ $(document).ready(function(){
 				currentId = 4;
 			}else{
 				currentId = parseInt(lastIndex % 5 - 1);
-			}
-			
-			
+			}		
 		}
 		if(currentId == "next"){
 			if(lastIndex % 5 == 0){
@@ -101,14 +106,14 @@ $(document).ready(function(){
 
 	/* --- Handle submit button --- */
 	$("#submitButton").on("click", function(e){
+		init();
 		index = 1;
 		var detail = "";
 		var urlToGo = "";
-		alert(handler);
+
 		if(handler == true){
-			detail = "&queryString=" $("textarea#text_area").val();			
-		}else{
-			
+			detail += "queryString=" + $("textarea#text_area").val();			
+		}else{		
 			switch(target){
 				case "Book":
 					detail += ($("#BookName").is(':checked')) ? "&name=" + $("#bookNameStr").val() : "";
@@ -159,12 +164,11 @@ function sendRequest(url) {
 		}catch( e ){
 		}
 	}
-
 	if( req != null){
 		req.open("GET", url, false);
 		req.onreadystatechange = showResult;
-		req.setRequestHeader("Connection", "Close");
-		req.setRequestHeader("Method", "GET" + url + "HTTP/1.1" );
+		// req.setRequestHeader("Connection", "Close");
+		// req.setRequestHeader("Method", "GET" + url + "HTTP/1.1" );
 		req.send(null);
 	}else{
 		alert("Sorry, but I couldn't create an XMLHttpRequest");
@@ -198,7 +202,9 @@ function showResult(){
 				tmp += descriptionArray[j]; 
 			}
 			tmp += " ... ";
-			str += "<h6 class='resultTitle'><b><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a></b></h6><span class='resultContent'>"+ tmp +"</span>";
+			str += "<p><span class='resultTitle'><b><a href='" + link + "' target='_blank'>" + name + "</a></b></span><br>";
+			str += "<span class='resultLink'>" + link + "</span><br>";
+			str += "<span class='resultContent'>"+ tmp +"</span><br></p>";
 		}
 		str += "</div>";
 		document.getElementById('result_area').innerHTML = str;
@@ -207,22 +213,10 @@ function showResult(){
 
 }
 
-// function paginationHandler(currentId){
-// 	if(currentId == "last"){
-// 		var lastElmt = document.getElementById(lastIndex);
-// 		lastElmt.className = "";
+function init(){
 
-// 		currentId = lastIndex - 1;
+	for(var i = 1; i<=5; i++){
+		$("#"+i).html(i);
+	}
 
-// 		var currentElmt = document.getElementById(currentId);
-// 		currentElmt.className += "active";
-// 	}
-// 	if(currentId == "next"){
-// 		currentId == lastIndex + 1;
-// 	}
-// 	index = parseInt(currentId);
-// 	lastIndex = index;
-// 	showResult();
-// }
-
-
+}

@@ -32,25 +32,21 @@
     <![endif]-->
 
 
-	<script
-		src="http://designmodo.github.io/Flat-UI/dist/js/vendor/jquery.min.js"></script>
-	<script
-		src="http://designmodo.github.io/Flat-UI/dist/js/flat-ui.min.js"></script>
-	<script
-		src="http://designmodo.github.io/Flat-UI/docs/assets/js/application.js"></script>
+<script
+	src="http://designmodo.github.io/Flat-UI/dist/js/vendor/jquery.min.js"></script>
+<script src="http://designmodo.github.io/Flat-UI/dist/js/flat-ui.min.js"></script>
+<script
+	src="http://designmodo.github.io/Flat-UI/docs/assets/js/application.js"></script>
 
-	<script type="text/javascript" src="js/javascript.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 </head>
 <body>
 	<div class="jumbotron" style='text-align: center; margin-bottom: 0px;'>
-		<h3>
-			Semantic Search on Federated Ontology
-		</h3>
-		<h5>
-			Books and Movies based on Books
-		</h5>
+		<h3>Semantic Search on Federated Ontology</h3>
+		<h5>Books and Movies based on Books</h5>
 	</div>
 	<!-- navigation bar -->
 	<div class="row">
@@ -59,106 +55,108 @@
 				style='margin-bottom: 0px'>
 				<div id="navbar-collapse-01" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-left">
-						<li data-tabid="1" class="tabs"><a href="#fakelink" id="facetedSearch">Faceted
-								Search</a></li>
-						<li data-tabid="2" class="tabs"><a href="#fakelink" id="sparqlSearch">Sparql
-								Search</a></li>
-						<li><a href="#fakelink">About Us</a></li>
-						<li><button id="submitButton" class="btn btn-block btn-lg btn-primary">Submit</button></li>
+						<li data-tabid="1" class="tabs"><a href="#fakelink"
+							id="facetedSearch">Faceted Search</a></li>
+						<li data-tabid="2" class="tabs"><a href="#fakelink"
+							id="sparqlSearch">Sparql Search</a></li>
 					</ul>
+
+					<button id="submitButton" class="btn btn-default navbar-btn"
+						type="submit">
+						<span class="fui-search"></span>
+					</button>
+
 				</div>
 			</nav>
 		</div>
 	</div>
 	<!-- pallete item-->
 	<div id="menu">
-	<nav role="navigation" id="target_menu" class="navbar navbar-inverse navbar-embossed">
-		<div style="width:100%">
-			<dl class="palette palette-turquoise">
-				<h4 class="todo-name" id="Book">Book</h4>
-			</dl>
-			<dl class="palette palette-green-sea">
-				<h4 class="todo-name" id="Movie">Movie</h4>
-			</dl>
-			<dl class="palette palette-turquoise">
-				<h4 class="todo-name" id="Author">Author</h4>
-			</dl>
-			<dl class="palette palette-green-sea">
-				<h4 class="todo-name" id="Actor">Actor</h4>
-			</dl>
-			<dl class="palette palette-turquoise">
-				<h4 class="todo-name" id="Director">Director</h4>
-			</dl>
+		<nav role="navigation" id="target_menu"
+			class="navbar navbar-inverse navbar-embossed">
+			<div style="width: 100%">
+				<dl class="palette palette-turquoise">
+					<h4 class="todo-name" id="Book">Book</h4>
+				</dl>
+				<dl class="palette palette-green-sea">
+					<h4 class="todo-name" id="Movie">Movie</h4>
+				</dl>
+				<dl class="palette palette-turquoise">
+					<h4 class="todo-name" id="Author">Author</h4>
+				</dl>
+				<dl class="palette palette-green-sea">
+					<h4 class="todo-name" id="Actor">Actor</h4>
+				</dl>
+				<dl class="palette palette-turquoise">
+					<h4 class="todo-name" id="Director">Director</h4>
+				</dl>
+			</div>
+		</nav>
+
+		<div id="BookSpecs" class="optionTable">
+			<label for="BookName" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="BookName" value="">
+				Name
+			</label> <label for="BookAuthor" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="BookAuthor" value=""
+				class="custom-checkbox"> Author
+			</label> <label for="BookLanguage" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="BookLanguage" value=""
+				class="custom-checkbox"> Language
+			</label>
 		</div>
-	</nav>
+		<div id="MovieSpecs" class="optionTable">
+			<label for="MovieName" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="MovieName" value=""
+				class="custom-checkbox"> Name
+			</label> <label for="MovieWriter" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="MovieWriter" value=""
+				class="custom-checkbox"> Writer
+			</label> <label for="MovieDirector" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="MovieDirector" value=""
+				class="custom-checkbox"> Director
+			</label> <label for="MovieStarring" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="MovieStarring" value=""
+				class="custom-checkbox"> Starring
+			</label> <label for="checkbox1" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="MovieLanguage" value=""
+				class="custom-checkbox"><span class="icons"><span
+					class="icon-unchecked"></span><span class="icon-checked"></span></span>
+				Language
+			</label>
+		</div>
+		<div id="AuthorSpecs" class="optionTable">
+			<label for="AuthorMovieName" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="AuthorMovieName" value=""
+				class="custom-checkbox"> Movie_Name
+			</label> <label for="AuthorBookName" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="AuthorBookName" value=""
+				class="custom-checkbox"> Book_Name
+			</label>
+		</div>
+		<div id="ActorSpecs" class="optionTable">
+			<label for="ActorMovieName" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="ActorMovieName" value=""
+				class="custom-checkbox"> Movie_Name
+			</label>
+		</div>
+		<div id="DirectorSpecs" class="optionTable">
+			<label for="DirectorMovieName" class="checkbox"> <input
+				type="checkbox" data-toggle="checkbox" id="DirectorMovieName"
+				value="" class="custom-checkbox"> Movie_Name
+			</label>
+		</div>
+	</div>
 
-	<div id="BookSpecs" class="optionTable">
-		<label for="BookName" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="BookName" value="">
-            Name
-         </label>
-         <label for="BookAuthor" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="BookAuthor" value="" class="custom-checkbox">
-            Author
-         </label>
-         <label for="BookLanguage" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="BookLanguage" value="" class="custom-checkbox">
-            Language
-         </label>
+	<div id="sqlInput" style="width: 20%; margin-left: 15px">
+		<textarea id="text_area" class="form-control" rows="15" cols="35"
+			style="margin-top: 10px; resize: none"
+			placeholder="Enter SPARQL here"></textarea>
 	</div>
-	<div id="MovieSpecs" class="optionTable">
-		<label for="MovieName" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="MovieName" value="" class="custom-checkbox">
-            Name
-         </label>
-         <label for="MovieWriter" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="MovieWriter" value="" class="custom-checkbox">
-            Writer
-         </label>
-         <label for="MovieDirector" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="MovieDirector" value="" class="custom-checkbox">
-            Director
-         </label>
-         <label for="MovieStarring" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="MovieStarring" value="" class="custom-checkbox">
-            Starring
-         </label>
-         <label for="checkbox1" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="MovieLanguage" value="" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-            Language
-         </label>
-	</div>
-	<div id="AuthorSpecs" class="optionTable">
-		<label for="AuthorMovieName" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="AuthorMovieName" value="" class="custom-checkbox">
-            Movie_Name
-         </label>
-         <label for="AuthorBookName" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="AuthorBookName" value="" class="custom-checkbox">
-            Book_Name
-         </label>
-	</div>
-	<div id="ActorSpecs" class="optionTable">
-		<label for="ActorMovieName" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="ActorMovieName" value="" class="custom-checkbox">
-            Movie_Name
-         </label>
-	</div>
-	<div id="DirectorSpecs" class="optionTable">
-		<label for="DirectorMovieName" class="checkbox">
-            <input type="checkbox" data-toggle="checkbox" id="DirectorMovieName" value="" class="custom-checkbox">
-            Movie_Name
-         </label>
-	</div>
-</div>
-
-<div id="sqlInput">
-	<textarea id="text_area" rows="10" cols="35" style="margin-top:10px" placeholder="Enter SQL here"></textarea>
-</div>
 
 
-	<div id='result_area' style="display:inline-block"></div>
-	
+	<div id='result_area' style="display: inline-block"></div>
+
 	<div id="paginationBar">
 		<div class="pagination">
 			<ul>

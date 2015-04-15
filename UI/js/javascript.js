@@ -121,7 +121,7 @@ function showResult(){
 	var end = start + 2;
 
 	if( req.readyState == 4  && req.status == 200 ){
-		var str = "<ul>";
+		var str = "<div>";
 		var jsonData = JSON.parse( req.responseText );
 		results = jsonData;
 
@@ -134,9 +134,16 @@ function showResult(){
 			var link = results[i].wikiLink;
 			var name = results[i].name;
 			var description = results[i].description;
-			str += "<li><a href='" + link + "' target='_blank' style='color:black'>" + name + "</a><p>"+description+"</p></li>";
+			descriptionArray = description.split(" ");
+			var tmp = "";
+			for(var j = 0; j < 30 && j < descriptionArray.length; ++j){
+				if( tmp != "" )  tmp += " ";
+				tmp += descriptionArray[j]; 
+			}
+			tmp += " ... ";
+			str += "<a href='" + link + "' target='_blank'>" + name + "</a><p style='font-size:15px'><span style='color:#3498DB'>" + link + "</span><br>"+tmp+"</p>";
 		}
-		str += "</ul>";
+		str += "</div>";
 		document.getElementById('result_area').innerHTML = str;
 	}
 

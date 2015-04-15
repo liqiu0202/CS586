@@ -16,14 +16,17 @@ $(document).ready(function(){
 	var previousId = "";
 	var perviousSelected = "";
 	var lastIndex = 1;
+	var handler = false;
 	/* ---  Handle nav tabs --- */
 	$("#sparqlSearch").on("click", function(e){
 		$("#menu").hide();
 		$("#sqlInput").show();
+		handler = true;
 	})
 	$("#facetedSearch").on("click", function(e){
 		$("#sqlInput").hide();
 		$("#menu").show();
+		handler = false;
 	})
 
 	/* --- Handle menu tabs --- */
@@ -101,30 +104,37 @@ $(document).ready(function(){
 		index = 1;
 		var detail = "";
 		var urlToGo = "";
-		switch(target){
-			case "Book":
-				detail += ($("#BookName").is(':checked')) ? "&name=" + $("#bookNameStr").val() : "";
-				detail += ($("#BookAuthor").is(':checked')) ? "&author=" + $("#bookAuthorStr").val() : "";
-				detail += ($("#BookLanguage").is(':checked')) ? "&language=" + $("#bookLanguageStr").val() : "";
-				break;
-			case "Movie":
-				detail += ($("#MovieName").is(':checked')) ? "&name=" + $("#movieNameStr").val() : "";
-				detail += ($("#MovieWriter").is(':checked')) ? "&writer=" + $("#movieWriterStr").val() : "";
-				detail += ($("#MovieDirector").is(':checked')) ? "&director=" + $("#movieDirectorStr").val() : "";
-				detail += ($("#MovieStarring").is(':checked')) ? "&starring=" + $("#movieStarringStr").val() : "";
-				detail += ($("#MovieLanguage").is(':checked')) ? "&language=" + $("#movieLanguageStr").val() : "";
-				break;
-			case "Author":
-				detail += ($("#AuthorMovieName").is(':checked')) ? "&movieName=" + $("#authorMovieNameStr").val() : "";
-				detail += ($("#AuthorBookName").is(':checked')) ? "&bookName=" + $("#authorBookNameStr").val() : "";
-				break;
-			case "Actor":
-				detail += ($("#ActorMovieName").is(':checked')) ? "&movieName=" + $("#actorMovieNameStr").val() : "";
-				break;
-			case "Director":
-				detail += ($("#DirectorMovieName").is(':checked')) ? "&movieName=" + $("#directorMovieNameStr").val() : "";
-				break;
+		alert(handler);
+		if(handler == true){
+			detail = "&queryString=" $("textarea#text_area").val();			
+		}else{
+			
+			switch(target){
+				case "Book":
+					detail += ($("#BookName").is(':checked')) ? "&name=" + $("#bookNameStr").val() : "";
+					detail += ($("#BookAuthor").is(':checked')) ? "&author=" + $("#bookAuthorStr").val() : "";
+					detail += ($("#BookLanguage").is(':checked')) ? "&language=" + $("#bookLanguageStr").val() : "";
+					break;
+				case "Movie":
+					detail += ($("#MovieName").is(':checked')) ? "&name=" + $("#movieNameStr").val() : "";
+					detail += ($("#MovieWriter").is(':checked')) ? "&writer=" + $("#movieWriterStr").val() : "";
+					detail += ($("#MovieDirector").is(':checked')) ? "&director=" + $("#movieDirectorStr").val() : "";
+					detail += ($("#MovieStarring").is(':checked')) ? "&starring=" + $("#movieStarringStr").val() : "";
+					detail += ($("#MovieLanguage").is(':checked')) ? "&language=" + $("#movieLanguageStr").val() : "";
+					break;
+				case "Author":
+					detail += ($("#AuthorMovieName").is(':checked')) ? "&movieName=" + $("#authorMovieNameStr").val() : "";
+					detail += ($("#AuthorBookName").is(':checked')) ? "&bookName=" + $("#authorBookNameStr").val() : "";
+					break;
+				case "Actor":
+					detail += ($("#ActorMovieName").is(':checked')) ? "&movieName=" + $("#actorMovieNameStr").val() : "";
+					break;
+				case "Director":
+					detail += ($("#DirectorMovieName").is(':checked')) ? "&movieName=" + $("#directorMovieNameStr").val() : "";
+					break;
+			}
 		}
+		
 		
 		urlToGo = param + detail;
 

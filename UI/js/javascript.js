@@ -226,7 +226,7 @@ $(document).ready(function(){
 // }
 
 function showPaginationBar(results){
-	pageNum = Math.floor(results.length / recordsPerPage );
+	pageNum = Math.ceil(results.length / recordsPerPage );
 	var str = "<ul><li class='previous' id='movePrevious' onclick=\"moveToPrevious()\"><a class='fui-arrow-left'></a></li>";
 	for(var i = 0; i < pageNum; ++i){
 		if( i == 0 ) str += "<li class='pageBar active' onclick=\"changePage(this.id)\" id='" + (i+1) + "'><a id='" + (i+1) + "'>" + (i+1) + "</a></li>";

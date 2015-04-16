@@ -61,7 +61,9 @@ public class SPARQLHelper {
 				res.add( thing );
 			}
 		}
-		return res;	
+		ArrayList<Thing> ans = new ArrayList<Thing>();
+		for(int i = 0; i < 30 && i < res.size(); ++i ) ans.add( res.get(i) );
+		return ans;
 
 	}
 }

@@ -74,6 +74,7 @@ $(document).ready(function(){
 	    param = url + document.getElementById(elementId).innerHTML;
 	})
 
+
 	$("#BookName").on('click', function(e){
 		if($("#BookName").is(':checked')){
 			if($("#bookNameStr").val() != ""){
@@ -120,10 +121,10 @@ $(document).ready(function(){
 			}
 		}
 	})
-	$("#MovieStarring").on('click', function(e){
-		if($("#MovieStarring").is(':checked')){
-			if($("#movieStarringStr").val() != ""){
-				$("#tag"+tagIndex).html($("#movieStarringStr").val()).show();
+	$("#MovieBasedOn").on('click', function(e){
+		if($("#MovieBasedOn").is(':checked')){
+			if($("#MovieBasedOnStr").val() != ""){
+				$("#tag"+tagIndex).html($("#MovieBasedOnStr").val()).show();
 				tagIndex++;
 			}	
 		}
@@ -170,6 +171,9 @@ $(document).ready(function(){
 	})
 	
 
+
+	
+
 	/* --- Handle submit button --- */
 	$("#submitButton").on("click", function(e){
 		init();
@@ -190,7 +194,7 @@ $(document).ready(function(){
 					detail += ($("#MovieName").is(':checked')) ? "&name=" + $("#movieNameStr").val() : "";
 					detail += ($("#MovieWriter").is(':checked')) ? "&writer=" + $("#movieWriterStr").val() : "";
 					detail += ($("#MovieDirector").is(':checked')) ? "&director=" + $("#movieDirectorStr").val() : "";
-					detail += ($("#MovieStarring").is(':checked')) ? "&starring=" + $("#movieStarringStr").val() : "";
+					detail += ($("#MovieBasedOn").is(':checked')) ? "&basedOn=" + $("#MovieBasedOnStr").val() : "";
 					detail += ($("#MovieLanguage").is(':checked')) ? "&language=" + $("#movieLanguageStr").val() : "";
 					break;
 				case "Author":
@@ -277,8 +281,8 @@ function moveToNext(){
 
 
 function sendRequest(url) {
-	// alert(url);
 	console.log(url);
+	// alert(url);
 	req = null;
 	if( window.XMLHttpRequest ){
 		req = new XMLHttpRequest();
@@ -331,5 +335,7 @@ function init(){
 	for(var i = 1; i<=6; i++){
 		$("#tag"+i).hide();
 	}
-
+	document.getElementById('result_area').innerHTML = "";
+	
+	$("#paginationBar").hide();
 }

@@ -194,7 +194,7 @@ $(document).ready(function(){
 					detail += ($("#MovieName").is(':checked')) ? "&name=" + $("#movieNameStr").val() : "";
 					detail += ($("#MovieWriter").is(':checked')) ? "&writer=" + $("#movieWriterStr").val() : "";
 					detail += ($("#MovieDirector").is(':checked')) ? "&director=" + $("#movieDirectorStr").val() : "";
-					detail += ($("#MovieBasedOn").is(':checked')) ? "&basedOn=" + $("#MovieBasedOnStr").val() : "";
+					detail += ($("#MovieBasedOn").is(':checked')) ? "&baseOn=" + $("#MovieBasedOnStr").val() : "";
 					detail += ($("#MovieLanguage").is(':checked')) ? "&language=" + $("#movieLanguageStr").val() : "";
 					break;
 				case "Author":

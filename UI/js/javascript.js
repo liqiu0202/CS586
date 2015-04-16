@@ -1,5 +1,8 @@
 
 var index = 1;
+var currentPageId = 1;
+var recordsPerPage = 3;
+var pageNum = 0;
 
 $(document).ready(function(){
 	$("#BookSpecs").hide();
@@ -166,57 +169,6 @@ $(document).ready(function(){
 		}
 	})
 	
-	// $("#Book, #Movie, #Author, #Actor, #Director").hover(
-	// 	function(){
-	// 		//hover on
-	// 		$("#"+previousId+"Specs").hide();
-	// 		var elementId = $(this).attr("id");
-	// 		previousId = elementId;
-			
-	// 		$("#"+elementId).closest('dl').addClass("active");
-	// 		$("#"+elementId+"Specs").show();
-	// 	},
-	// 	function(){
-	// 		//hover out
-	// 		var elementId = $(this).attr("id");
-	// 		$("#"+elementId).closest('dl').removeClass("active");
-	// 	}
-	// )
-	// $("#menu").hover(function(){},function(){
-	// 	$("#"+previousId+"Specs").hide();
-	// })
-	
-
-	/* --- Pagination Handler --- */
-	$("#1, #2, #3, #4, #5, #last, #next").on('click', function(e){
-		var currentId = $(this).attr("id");
-
-		if(currentId == "last"){
-			if(lastIndex == 1) return;
-			if(lastIndex % 5 == 1){
-				for(var i = 5; i>=1; i--){
-					$("#"+(6-i)).html(lastIndex-i);
-				}
-				currentId = 5;
-			}else if(lastIndex % 5 == 0){
-				currentId = 4;
-			}else{
-				currentId = parseInt(lastIndex % 5 - 1);
-			}		
-		}
-		if(currentId == "next"){
-			if(lastIndex % 5 == 0){
-				for(var i = 1; i<=5; i++){
-					$("#"+i).html(lastIndex+i);
-				}
-			}
-			currentId = parseInt(lastIndex % 5 + 1);
-		}
-
-		index = parseInt($("#"+currentId).text());
-		lastIndex = index;
-		showResult();
-	})
 
 	/* --- Handle submit button --- */
 	$("#submitButton").on("click", function(e){
@@ -265,10 +217,68 @@ $(document).ready(function(){
 
 });
 
+// function changePage(pageId){
+// 	$(#pageId).
+// }
+
+function showPaginationBar(results){
+	pageNum = Math.floor(results.length / recordsPerPage );
+	var str = "<ul><li class='previous' id='movePrevious' onclick=\"moveToPrevious()\"><a class='fui-arrow-left'></a></li>";
+	for(var i = 0; i < pageNum; ++i){
+		if( i == 0 ) str += "<li class='pageBar active' onclick=\"changePage(this.id)\" id='" + (i+1) + "'><a id='" + (i+1) + "'>" + (i+1) + "</a></li>";
+		else str += "<li class='pageBar' onclick=\"changePage(this.id)\" id='" + (i+1) + "'><a id='" + (i+1) + "'>" + (i+1) + "</a></li>";
+	}
+	str += "<li class='next' id='moveNext' onclick=\"moveToNext()\"><a class='fui-arrow-right'></a></li></ul>";
+    document.getElementById('paginationBar').innerHTML = str;
+}
+
+function showRecords(pageId){
+	var offset = (pageId - 1) * recordsPerPage;
+	var str = "";
+	for(var i = 0; i < recordsPerPage && offset + i < results.length; ++i ){
+		var link = results[offset + i].wikiLink;
+			var name = results[offset + i].name;
+			var description = results[offset + i].description;
+			descriptionArray = description.split(" ");
+			var tmp = "";
+			for(var j = 0; j < 30 && j < descriptionArray.length; ++j){
+				if( tmp != "" )  tmp += " ";
+				tmp += descriptionArray[j]; 
+			}
+			tmp = tmp.substring( 0, Math.min(tmp.length, 150) );
+			tmp += " ... ";
+			str += "<p><span class='resultTitle'><b><a href='" + link + "' target='_blank'>" + name + "</a></b></span><br>";
+			str += "<span class='resultLink'>" + link + "</span><br>";
+			str += "<span class='resultContent'>"+ tmp +"</span><br></p>";
+	}
+	document.getElementById('result_area').innerHTML = str;
+}
+
+/* ---- click page handler ------*/
+function changePage(pageId){
+	//inactive previous page
+	document.getElementById(currentPageId).setAttribute("class", "pageBar");
+	document.getElementById(pageId).setAttribute("class", "pageBar active");
+	currentPageId = pageId;
+	showRecords(pageId);
+}
+
+function moveToPrevious(){
+	if( currentPageId > 1 ){
+		changePage( currentPageId - 1);
+	}
+}
+function moveToNext(){
+	if( currentPageId < pageNum ){
+		changePage(currentPageId + 1);
+	}
+}
+
 
 
 function sendRequest(url) {
 	// alert(url);
+	console.log(url);
 	req = null;
 	if( window.XMLHttpRequest ){
 		req = new XMLHttpRequest();
@@ -295,7 +305,7 @@ function showResult(){
 	var end = start + 2;
 
 	if( req.readyState == 4  && req.status == 200 ){
-		var str = "<div>";
+		var str = "";
 		var jsonData = JSON.parse( req.responseText );
 		results = jsonData;
 
@@ -305,23 +315,9 @@ function showResult(){
 			
 			return false;
 		}
-		for(var i=start; i<=end; i++){
-			var link = results[i].wikiLink;
-			var name = results[i].name;
-			var description = results[i].description;
-			descriptionArray = description.split(" ");
-			var tmp = "";
-			for(var j = 0; j < 30 && j < descriptionArray.length; ++j){
-				if( tmp != "" )  tmp += " ";
-				tmp += descriptionArray[j]; 
-			}
-			tmp += " ... ";
-			str += "<p><span class='resultTitle'><b><a href='" + link + "' target='_blank'>" + name + "</a></b></span><br>";
-			str += "<span class='resultLink'>" + link + "</span><br>";
-			str += "<span class='resultContent'>"+ tmp +"</span><br></p>";
-		}
-		str += "</div>";
-		document.getElementById('result_area').innerHTML = str;
+		currentPageId = 1;
+		showPaginationBar(results);
+		showRecords(1);
 		return true;
 	}
 

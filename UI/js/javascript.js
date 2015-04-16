@@ -9,6 +9,8 @@ $(document).ready(function(){
 	$("#DirectorSpecs").hide();
 	$("#paginationBar").hide();
 	$("#sqlInput").hide();
+	$(".custom-checkbox").attr("checked", false);
+	$(".form-control").val('');
 
 	init();
 
@@ -19,16 +21,21 @@ $(document).ready(function(){
 	var perviousSelected = "";
 	var lastIndex = 1;
 	var handler = false;
+	var tagIndex = 0;
 
 	/* ---  Handle nav tabs --- */
 
 	$("#sparqlSearch").on("click", function(e){
+		init();
 		$("#menu").hide();
 		$("#sqlInput").show();
 		handler = true;
 		param = "http://localhost:8080/examples/servlets/servlet/QueryProcessor?";
 	})
 	$("#facetedSearch").on("click", function(e){
+		init();
+		$(".custom-checkbox").attr("checked", false);
+		$(".form-control").val('');
 		$("#sqlInput").hide();
 		$("#menu").show();
 		handler = false;
@@ -40,11 +47,22 @@ $(document).ready(function(){
 	$("#Book, #Movie, #Author, #Actor, #Director").on("click", function (e) {
 		// Prevent page from refreshing
 		e.preventDefault();
+		init();
+		$(".custom-checkbox").attr("checked", false);
+		$(".form-control").val('');
+		$("#"+previousId+"Specs").hide();
 		$("#"+perviousSelected).closest('dl').removeClass("selected");
 
 		var elementId = $(this).attr("id");
+
+		tagIndex = 1;
+		$("#tag"+tagIndex).html($("#"+elementId).html()).show();
+		tagIndex++;
+
 		perviousSelected = elementId;
+		previousId = elementId;
 		$("#"+elementId).closest('dl').addClass("selected");
+		$("#"+elementId+"Specs").show();
 
 		target = elementId;
 
@@ -52,22 +70,118 @@ $(document).ready(function(){
 		
 	    param = url + document.getElementById(elementId).innerHTML;
 	})
-	$("#Book, #Movie, #Author, #Actor, #Director").hover(
-		function(){
-			//hover on
-			$("#"+previousId+"Specs").hide();
-			var elementId = $(this).attr("id");
-			previousId = elementId;
-			
-			$("#"+elementId).closest('dl').addClass("active");
-			$("#"+elementId+"Specs").show();
-		},
-		function(){
-			//hover out
-			var elementId = $(this).attr("id");
-			$("#"+elementId).closest('dl').removeClass("active");
+
+	$("#BookName").on('click', function(e){
+		if($("#BookName").is(':checked')){
+			if($("#bookNameStr").val() != ""){
+				$("#tag"+tagIndex).html($("#bookNameStr").val()).show();
+				tagIndex++;
+			}		
 		}
-	)
+	})
+	$("#BookAuthor").on('click', function(e){
+		if($("#BookAuthor").is(':checked')){
+			if($("#bookAuthorStr").val() != ""){
+				$("#tag"+tagIndex).html($("#bookAuthorStr").val()).show();
+				tagIndex++;
+			}			
+		}
+	})
+	$("#BookLanguage").on('click', function(e){
+		if($("#BookLanguage").is(':checked')){
+			if($("#bookLanguageStr").val() != ""){
+				$("#tag"+tagIndex).html($("#bookLanguageStr").val()).show();
+				tagIndex++;
+			}	
+		}
+	})
+	$("#MovieName").on('click', function(e){
+		if($("#MovieName").is(':checked')){
+			$("#tag"+tagIndex).html($("#movieNameStr").val()).show();
+			tagIndex++;
+		}
+	})
+	$("#MovieWriter").on('click', function(e){
+		if($("#MovieWriter").is(':checked')){
+			if($("#movieWriterStr").val() != ""){
+				$("#tag"+tagIndex).html($("#movieWriterStr").val()).show();
+				tagIndex++;
+			}
+		}
+	})
+	$("#MovieDirector").on('click', function(e){
+		if($("#MovieDirector").is(':checked')){
+			if($("#movieDirectorStr").val() != ""){
+				$("#tag"+tagIndex).html($("#movieDirectorStr").val()).show();
+				tagIndex++;
+			}
+		}
+	})
+	$("#MovieStarring").on('click', function(e){
+		if($("#MovieStarring").is(':checked')){
+			if($("#movieStarringStr").val() != ""){
+				$("#tag"+tagIndex).html($("#movieStarringStr").val()).show();
+				tagIndex++;
+			}	
+		}
+	})
+	$("#MovieLanguage").on('click', function(e){
+		if($("#MovieLanguage").is(':checked')){
+			if($("#movieLanguageStr").val() != ""){
+				$("#tag"+tagIndex).html($("#movieLanguageStr").val()).show();
+				tagIndex++;
+			}
+		}
+	})
+	$("#AuthorMovieName").on('click', function(e){
+		if($("#AuthorMovieName").is(':checked')){
+			if($("#authorMovieNameStr").val() != ""){
+				$("#tag"+tagIndex).html($("#authorMovieNameStr").val()).show();
+				tagIndex++;
+			}
+		}
+	})
+	$("#AuthorBookName").on('click', function(e){
+		if($("#AuthorBookName").is(':checked')){
+			if($("#authorBookNameStr").val() != ""){
+				$("#tag"+tagIndex).html($("#authorBookNameStr").val()).show();
+				tagIndex++;
+			}
+		}
+	})
+	$("#ActorMovieName").on('click', function(e){
+		if($("#ActorMovieName").is(':checked')){
+			if($("#actorMovieNameStr").val() != ""){
+				$("#tag"+tagIndex).html($("#actorMovieNameStr").val()).show();
+				tagIndex++;
+			}		
+		}
+	})
+	$("#DirectorMovieName").on('click', function(e){
+		if($("#DirectorMovieName").is(':checked')){
+			if($("#directorMovieNameStr").val() != ""){
+				$("#tag"+tagIndex).html($("#directorMovieNameStr").val()).show();
+				tagIndex++;
+			}			
+		}
+	})
+	
+	// $("#Book, #Movie, #Author, #Actor, #Director").hover(
+	// 	function(){
+	// 		//hover on
+	// 		$("#"+previousId+"Specs").hide();
+	// 		var elementId = $(this).attr("id");
+	// 		previousId = elementId;
+			
+	// 		$("#"+elementId).closest('dl').addClass("active");
+	// 		$("#"+elementId+"Specs").show();
+	// 	},
+	// 	function(){
+	// 		//hover out
+	// 		var elementId = $(this).attr("id");
+	// 		$("#"+elementId).closest('dl').removeClass("active");
+	// 	}
+	// )
 	// $("#menu").hover(function(){},function(){
 	// 	$("#"+previousId+"Specs").hide();
 	// })
@@ -154,7 +268,7 @@ $(document).ready(function(){
 
 
 function sendRequest(url) {
-	alert(url);
+	// alert(url);
 	req = null;
 	if( window.XMLHttpRequest ){
 		req = new XMLHttpRequest();
@@ -217,6 +331,9 @@ function init(){
 
 	for(var i = 1; i<=5; i++){
 		$("#"+i).html(i);
+	}
+	for(var i = 1; i<=6; i++){
+		$("#tag"+i).hide();
 	}
 
 }

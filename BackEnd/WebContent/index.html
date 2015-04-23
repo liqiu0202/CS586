@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Book And Movie Semantic Search</title>
+<meta name="description"
+	content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version." />
+
+<meta name="viewport"
+	content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- Loading Bootstrap -->
+<link
+	href="http://designmodo.github.io/Flat-UI/dist/css/vendor/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Loading Flat UI -->
+<link
+	href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css"
+	rel="stylesheet">
+<link
+	href="http://designmodo.github.io/Flat-UI/docs/assets/css/demo.css"
+	rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="img/favicon.ico">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+
+<script
+	src="http://designmodo.github.io/Flat-UI/dist/js/vendor/jquery.min.js"></script>
+<script src="http://designmodo.github.io/Flat-UI/dist/js/flat-ui.min.js"></script>
+<script
+	src="http://designmodo.github.io/Flat-UI/docs/assets/js/application.js"></script>
+
+<script type="text/javascript" src="js/javascript.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body style="overflow: hidden">
+	<div class="jumbotron" style='text-align: center; margin-bottom: 0px;'>
+		<h3>Semantic Search on Federated Ontology</h3>
+		<h5>Books and Movies based on Books</h5>
+	</div>
+	<!-- navigation bar -->
+	<div>
+		<nav role="navigation" class="navbar navbar-inverse navbar-embossed"
+			style='margin-bottom: 0px; border-radius: 0px'>
+			<div id="navbar-collapse-01" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li data-tabid="1" class="tabs"><a href="#fakelink"
+						id="facetedSearch">Faceted Search</a></li>
+					<li data-tabid="2" class="tabs"><a href="#fakelink"
+						id="sparqlSearch">SPARQL Search</a></li>
+				</ul>
+				<div class="custom-tagsinput" style="display:inline" id="tags">
+					<span class="tag label label-info" id="tag1">1<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="tag2">2<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="tag3">3<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="tag4">4<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="tag5">5<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="tag6">6<span data-role="remove"></span></span>
+				</div>
+
+				<button id="submitButton" class="btn btn-default navbar-btn"
+					type="submit">
+					<span class="fui-search"></span>
+				</button>
+
+			</div>
+		</nav>
+	</div>
+	<!-- pallete item-->
+	<div id="content" style="display: inline-block">
+		<div id="menu" style="width: 400px">
+			<nav role="navigation" id="target_menu" style="height: 3000px;background-color:#1ABC9C"
+				class="navbar navbar-inverse navbar-embossed">
+				<div style="width: 100%">
+					<dl class="palette palette-turquoise">
+						<h4 class="todo-name" id="Book">Book</h4>
+					</dl>
+					<dl class="palette palette-green-sea">
+						<h4 class="todo-name" id="Movie">Movie</h4>
+					</dl>
+					<dl class="palette palette-turquoise">
+						<h4 class="todo-name" id="Author">Author</h4>
+					</dl>
+					<dl class="palette palette-green-sea">
+						<h4 class="todo-name" id="Actor">Actor</h4>
+					</dl>
+					<dl class="palette palette-turquoise">
+						<h4 class="todo-name" id="Director">Director</h4>
+					</dl>
+				</div>
+			</nav>
+
+			<form id="bookForm">
+				<div id="BookSpecs" class="optionTable">
+					<label for="BookName" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="BookName" value="">
+						Name
+					</label> <input type="text" value="" class="form-control input-sm" id="bookNameStr">
+					<label for="BookAuthor" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="BookAuthor" value=""
+						class="custom-checkbox"> Author
+					</label> <input type="text" value="" class="form-control input-sm" id="bookAuthorStr">
+					<label for="BookLanguage" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="BookLanguage" value=""
+						class="custom-checkbox"> Language
+					</label> <input type="text" value="" class="form-control input-sm" id="bookLanguageStr">
+				</div>
+			</form>
+			<form id="movieForm">
+				<div id="MovieSpecs" class="optionTable">
+					<label for="MovieName" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="MovieName" value=""
+						class="custom-checkbox"> Name
+					</label> <input type="text" value="" class="form-control input-sm" id="movieNameStr">
+					<label for="MovieWriter" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="MovieWriter" value=""
+						class="custom-checkbox"> Writer
+					</label> <input type="text" value="" class="form-control input-sm" id="movieWriterStr">
+					<label for="MovieDirector" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="MovieDirector" value=""
+						class="custom-checkbox"> Director
+					</label> <input type="text" value="" class="form-control input-sm" id="movieDirectorStr">
+					<label for="MovieBasedOn" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="MovieBasedOn" value=""
+						class="custom-checkbox"> BasedOn
+					</label> <input type="text" value="" class="form-control input-sm" id="MovieBasedOnStr">
+					<label for="MovieLanguage" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="MovieLanguage" value=""
+						class="custom-checkbox"> Language
+					</label> <input type="text" value="" class="form-control input-sm" id="movieLanguageStr">
+				</div>
+			</form>
+			<form id="authorForm">
+				<div id="AuthorSpecs" class="optionTable">
+					<label for="AuthorMovieName" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="AuthorMovieName"
+						value="" class="custom-checkbox"> Movie_Name
+					</label> <input type="text" value="" class="form-control input-sm"
+						id="authorMovieNameStr"> <label for="AuthorBookName"
+						class="checkbox"> <input type="checkbox"
+						data-toggle="checkbox" id="AuthorBookName" value=""
+						class="custom-checkbox"> Book_Name
+					</label> <input type="text" value="" class="form-control input-sm" id="authorBookNameStr">
+				</div>
+			</form>
+			<form id="actorForm">
+				<div id="ActorSpecs" class="optionTable">
+					<label for="ActorMovieName" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="ActorMovieName" value=""
+						class="custom-checkbox"> Movie_Name
+					</label> <input type="text" value="" class="form-control input-sm" id="actorMovieNameStr">
+				</div>
+			</form>
+			<form id="directorForm">
+				<div id="DirectorSpecs" class="optionTable">
+					<label for="DirectorMovieName" class="checkbox"> <input
+						type="checkbox" data-toggle="checkbox" id="DirectorMovieName"
+						value="" class="custom-checkbox"> Movie_Name
+					</label> <input type="text" value="" class="form-control input-sm"
+						id="directorMovieNameStr">
+				</div>
+			</form>
+
+		</div>
+
+		<div id="sqlInput" style="margin-left: 15px">
+			<textarea id="text_area" class="form-control input-sm" rows="15" cols="35"
+				style="margin-top: 10px; resize: none; width:100%"
+				placeholder="Enter SPARQL here"></textarea>
+		</div>
+	</div>
+		<div id='result_and_pagination'>
+			<div id='result_area' style="display: inline-block"></div>
+			<div class="pagination" id="paginationBar">
+				<!-- <ul>
+					<li class="pageBar"><a class="" id="last">&lt;</a></li>
+					<li class="active pageBar"><a id="1">1</a></li>
+					<li class="pageBar"><a id="2">2</a></li>
+					<li class="pageBar"><a id="3">3</a></li>
+					<li class="pageBar"><a id="4">4</a></li>
+					<li class="pageBar"><a id="5">5</a></li>
+					<li class="pageBar"><a class="" id="next">&gt;</a></li>
+				</ul> -->
+			</div>
+		</div>
+	
+
+</body>
+</html>

@@ -60,12 +60,13 @@
 						id="sparqlSearch">SPARQL Search</a></li>
 				</ul>
 				<div class="custom-tagsinput" style="display:inline" id="tags">
-					<span class="tag label label-info" id="tag1">1<span data-role="remove"></span></span>
-					<span class="tag label label-info" id="tag2">2<span data-role="remove"></span></span>
-					<span class="tag label label-info" id="tag3">3<span data-role="remove"></span></span>
-					<span class="tag label label-info" id="tag4">4<span data-role="remove"></span></span>
-					<span class="tag label label-info" id="tag5">5<span data-role="remove"></span></span>
-					<span class="tag label label-info" id="tag6">6<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="targetName">targetName<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="bookName">bookName<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="movieName">movieName<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="actorName">actorName<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="authorName">authorName<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="directorName">directorName<span data-role="remove"></span></span>
+					<span class="tag label label-info" id="language">language<span data-role="remove"></span></span>
 				</div>
 
 				<button id="submitButton" class="btn btn-default navbar-btn"
@@ -102,71 +103,113 @@
 
 			<form id="bookForm">
 				<div id="BookSpecs" class="optionTable">
-					<label for="BookName" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="BookName" value="">
+					<label for="BookName" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="BookName" onclick="clickCheckBox(this.id)"
+						contentInput="bookNameStr" tagId = "bookName">
 						Name
-					</label> <input type="text" value="" class="form-control input-sm" id="bookNameStr">
-					<label for="BookAuthor" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="BookAuthor" value=""
+					</label>
+					<input type="text" value="" class="form-control input-sm" id="bookNameStr">
+					
+					<label for="BookAuthor" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="BookAuthor" onclick="clickCheckBox(this.id)"
+						contentInput="bookAuthorStr" tagId = "authorName"
 						class="custom-checkbox"> Author
-					</label> <input type="text" value="" class="form-control input-sm" id="bookAuthorStr">
-					<label for="BookLanguage" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="BookLanguage" value=""
+					</label>
+					<input type="text" value="" class="form-control input-sm" id="bookAuthorStr">
+					
+					<label for="BookLanguage" class="checkbox">
+					<input
+						type="checkbox" data-toggle="checkbox" id="BookLanguage" onclick="clickCheckBox(this.id)"
+						contentInput="bookLanguageStr" tagId = "language"
 						class="custom-checkbox"> Language
-					</label> <input type="text" value="" class="form-control input-sm" id="bookLanguageStr">
+					</label>
+					<input type="text" value="" class="form-control input-sm" id="bookLanguageStr">
 				</div>
 			</form>
 			<form id="movieForm">
 				<div id="MovieSpecs" class="optionTable">
-					<label for="MovieName" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="MovieName" value=""
+					<label for="MovieName" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="MovieName" onclick="clickCheckBox(this.id)"
+						contentInput="movieNameStr" tagId = "movieName"
 						class="custom-checkbox"> Name
-					</label> <input type="text" value="" class="form-control input-sm" id="movieNameStr">
-					<label for="MovieWriter" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="MovieWriter" value=""
+					</label> 
+					<input type="text" value="" class="form-control input-sm" id="movieNameStr">
+					
+					<label for="MovieWriter" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="MovieWriter" onclick="clickCheckBox(this.id)"
+						contentInput="movieWriterStr" tagId = "authorName"
 						class="custom-checkbox"> Writer
-					</label> <input type="text" value="" class="form-control input-sm" id="movieWriterStr">
-					<label for="MovieDirector" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="MovieDirector" value=""
+					</label>
+					<input type="text" value="" class="form-control input-sm" id="movieWriterStr">
+					
+					<label for="MovieDirector" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="MovieDirector" onclick="clickCheckBox(this.id)"
+						contentInput="movieDirectorStr" tagId = "directorName"
 						class="custom-checkbox"> Director
-					</label> <input type="text" value="" class="form-control input-sm" id="movieDirectorStr">
-					<label for="MovieBasedOn" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="MovieBasedOn" value=""
+					</label> 
+					<input type="text" value="" class="form-control input-sm" id="movieDirectorStr">
+					
+					<label for="MovieBasedOn" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="MovieBasedOn" onclick="clickCheckBox(this.id)"
+						contentInput="MovieBasedOnStr" tagId = "bookName"
 						class="custom-checkbox"> BasedOn
-					</label> <input type="text" value="" class="form-control input-sm" id="MovieBasedOnStr">
-					<label for="MovieLanguage" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="MovieLanguage" value=""
+					</label>
+					<input type="text" value="" class="form-control input-sm" id="MovieBasedOnStr">
+					
+					<label for="MovieLanguage" class="checkbox">
+					<input
+						type="checkbox" data-toggle="checkbox" id="MovieLanguage" onclick="clickCheckBox(this.id)"
+						contentInput="movieLanguageStr" tagId = "language"
 						class="custom-checkbox"> Language
 					</label> <input type="text" value="" class="form-control input-sm" id="movieLanguageStr">
 				</div>
 			</form>
 			<form id="authorForm">
 				<div id="AuthorSpecs" class="optionTable">
-					<label for="AuthorMovieName" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="AuthorMovieName"
-						value="" class="custom-checkbox"> Movie_Name
-					</label> <input type="text" value="" class="form-control input-sm"
-						id="authorMovieNameStr"> <label for="AuthorBookName"
-						class="checkbox"> <input type="checkbox"
-						data-toggle="checkbox" id="AuthorBookName" value=""
+					<label for="AuthorMovieName" class="checkbox">
+					<input
+						type="checkbox" data-toggle="checkbox" id="AuthorMovieName" onclick="clickCheckBox(this.id)"
+						contentInput="authorMovieNameStr" tagId = "movieName"
+						class="custom-checkbox"> Movie_Name
+					</label>
+					<input type="text" value="" class="form-control input-sm"
+						id="authorMovieNameStr">
+					
+					<label for="AuthorBookName"
+						class="checkbox">
+					<input type="checkbox"
+						data-toggle="checkbox" id="AuthorBookName" onclick="clickCheckBox(this.id)"
+						contentInput="authorBookNameStr" tagId = "bookName"
 						class="custom-checkbox"> Book_Name
-					</label> <input type="text" value="" class="form-control input-sm" id="authorBookNameStr">
+					</label> 
+					<input type="text" value="" class="form-control input-sm" id="authorBookNameStr">
 				</div>
 			</form>
 			<form id="actorForm">
 				<div id="ActorSpecs" class="optionTable">
-					<label for="ActorMovieName" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="ActorMovieName" value=""
+					<label for="ActorMovieName" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="ActorMovieName" onclick="clickCheckBox(this.id)"
+						contentInput="actorMovieNameStr" tagId = "movieName"
 						class="custom-checkbox"> Movie_Name
 					</label> <input type="text" value="" class="form-control input-sm" id="actorMovieNameStr">
 				</div>
 			</form>
 			<form id="directorForm">
 				<div id="DirectorSpecs" class="optionTable">
-					<label for="DirectorMovieName" class="checkbox"> <input
-						type="checkbox" data-toggle="checkbox" id="DirectorMovieName"
-						value="" class="custom-checkbox"> Movie_Name
-					</label> <input type="text" value="" class="form-control input-sm"
+					<label for="DirectorMovieName" class="checkbox"> 
+					<input
+						type="checkbox" data-toggle="checkbox" id="DirectorMovieName" onclick="clickCheckBox(this.id)"
+						contentInput="directorMovieNameStr" tagId = "movieName"
+						class="custom-checkbox"> Movie_Name
+					</label> 
+					<input type="text" value="" class="form-control input-sm"
 						id="directorMovieNameStr">
 				</div>
 			</form>

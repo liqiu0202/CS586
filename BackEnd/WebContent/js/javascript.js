@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$("#sqlInput").hide();
 	$(".custom-checkbox").attr("checked", false);
 	$(".form-control").val('');
-	
+	$('.label-info').hide();
 	
 
 	init();
@@ -255,7 +255,7 @@ function showResult(){
 
 function init(){
 
-	$('.label-info').hide();
+	
 	document.getElementById('result_area').innerHTML = "";
 	
 	$("#paginationBar").hide();
